@@ -1,0 +1,33 @@
+.main-nav {
+  ul {
+    display: flex;
+  }
+
+  li {
+    padding: 0 1.7rem;
+  }
+
+  &__hot {
+    margin-right: 1.5rem;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    height: 7rem;
+    font-family: $font-heading;
+    font-weight: 700;
+    line-height: 2rem;
+    color: $color-grey-1;
+  }
+
+  .active,
+  li:hover > &__link {
+    color: $color-brand;
+
+    i {
+      color: $color-brand;
+    }
+  }
+}

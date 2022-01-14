@@ -1,0 +1,162 @@
+.header {
+  &__top {
+    padding: 3rem 0;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    margin-right: 7rem;
+
+    img {
+      display: block;
+      width: 18rem;
+    }
+  }
+
+  &__search {
+    width: 100%;
+
+    form {
+      display: flex;
+      max-width: 70rem;
+      height: 5rem;
+      border: 2px solid $border-color-2;
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    i {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 13rem;
+      cursor: pointer;
+    }
+  }
+
+  &__category-select {
+    font-size: 1.4rem;
+    font-family: $font-heading;
+    font-weight: 700;
+    line-height: 2rem;
+    color: $color-heading;
+    height: 100%;
+    width: 15.5rem;
+    padding-left: 2rem;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__separate-line {
+    height: 2rem;
+    width: 1px;
+    background-color: #cacaca;
+    margin: auto 0;
+    margin-left: 1.3rem;
+  }
+
+  &__search-input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    margin-left: 1.7rem;
+    background-image: url(../imgs/theme/icons/search.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    margin-left: 1rem;
+  }
+
+  &__action-item {
+    display: flex;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+
+    img {
+      max-width: 2.5rem;
+      display: block;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__action-count {
+    position: absolute;
+    top: -0.7rem;
+    left: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+    background: $color-brand;
+    border-radius: 100%;
+  }
+
+  &__action-label {
+    padding-top: 0.6rem;
+    display: block;
+  }
+
+  &__bottom {
+    border-top: 1px solid $border-color-3;
+    border-bottom: 1px solid $border-color-3;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+  }
+
+  &__hotline {
+    display: flex;
+    flex-shrink: 0;
+    gap: 1.2rem;
+  }
+
+  &__hotline-icon {
+    width: 3.6rem;
+  }
+
+  &__hotline-text {
+  }
+
+  &__hotline-number {
+    font-family: $font-heading;
+    font-weight: 700;
+    font-size: 2.6rem;
+    line-height: 1;
+    color: $color-brand;
+  }
+
+  &__hotline-support {
+    font-size: $font-xxs;
+    letter-spacing: 0.9px;
+  }
+}
