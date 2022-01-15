@@ -1,0 +1,82 @@
+.btn,
+.btn:link,
+.btn:visited {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: $font-heading;
+  font-size: inherit;
+  font-weight: 700;
+  height: 4.4rem;
+  padding: 0 2rem;
+  color: #fff;
+  background-color: $color-brand;
+  border: none;
+  border-radius: 0.5rem;
+
+  .fi-rs-angle-down {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    color: currentColor;
+  }
+}
+
+.btn:hover,
+.btn:active {
+  background-color: $color-brand-dark;
+}
+
+.btn--subscribe {
+  height: 6.4rem;
+  padding: 0 4rem;
+  font-weight: 500;
+  line-height: 2rem;
+  letter-spacing: 0.5px;
+  border-radius: 5rem;
+}
+
+.slider-arrow,
+.slider-arrow:link,
+.slider-arrow:visited {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  font-size: inherit;
+  background: $background-1;
+  border-radius: 50%;
+  border: none;
+}
+
+.slider-arrow:hover,
+.slider-arrow:active {
+  background: $color-brand;
+  color: #fff;
+}
+
+.slider-dot,
+.slider-dot:link,
+.slider-dot:visited {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: none;
+  border-radius: 50%;
+  border: 1px solid $color-heading;
+  transition-timing-function: linear;
+}
+
+.slider-dot:hover,
+.slider-dot:active {
+  background: $border-color-2;
+}
+
+.slider-dot--active {
+  background: $color-brand;
+  border-color: $color-brand;
+}
+
+.slider-dot--active:hover {
+  background: $color-brand;
+  border-color: $color-brand;
+}

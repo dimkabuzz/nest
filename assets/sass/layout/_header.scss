@@ -33,7 +33,7 @@
 
     i {
       position: absolute;
-      top: 50%;
+      top: calc(50% - 0.2rem);
       transform: translateY(-50%);
       left: 13rem;
       cursor: pointer;

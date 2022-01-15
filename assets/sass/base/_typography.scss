@@ -7,9 +7,12 @@ body {
   font-weight: 400;
 }
 
-a {
+a,
+button {
   text-decoration: none;
   color: currentColor;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
 }
 
 ul,
@@ -17,7 +20,18 @@ ol {
   list-style: none;
 }
 
-a,
-button {
-  transition: all 0.3s ease 0s;
+.fi-rs-angle-down {
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: $color-text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $font-heading;
+  font-weight: 700;
+  color: $color-heading;
 }
