@@ -1,6 +1,5 @@
 .hero {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  padding: 3rem 0;
 }
 
 .hero-slider {
@@ -45,4 +44,8 @@
     left: 50%;
     transform: translateX(-50%);
   }
+}
+
+.featured-categories {
+  padding: 3rem 0;
 }

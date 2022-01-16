@@ -31,3 +31,28 @@
     }
   }
 }
+
+.nav-tabs {
+  display: flex;
+  gap: 3rem;
+
+  &__link:link,
+  &__link:visited {
+    display: inline-block;
+    height: 100%;
+    font-family: $font-heading;
+    font-weight: 600;
+    line-height: 1;
+    color: $color-heading;
+  }
+
+  &__link:hover,
+  &__link:active {
+    color: $color-brand;
+    transform: translateY(-0.3rem);
+  }
+
+  .active {
+    color: $color-brand;
+  }
+}
