@@ -30,7 +30,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   font-family: $font-heading;
   font-weight: 700;
   color: $color-heading;
@@ -39,4 +40,8 @@ h5 {
 
 h3 {
   font-size: 3.2rem;
+}
+
+h6 {
+  font-size: $font-md;
 }
