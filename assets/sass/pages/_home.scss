@@ -1,5 +1,5 @@
 .hero {
-  padding: 3rem 0;
+  padding: 2.5rem 0;
 }
 
 .hero-slider {
@@ -47,7 +47,7 @@
 }
 
 .featured {
-  padding: 3rem 0;
+  padding: 2.5rem 0;
 
   &__list {
   }
@@ -89,5 +89,14 @@
     &:hover img {
       transform: scale(1.05);
     }
+  }
+}
+
+.banners {
+  padding: 2.5rem 0;
+
+  &__wrap {
+    display: flex;
+    gap: 2.4rem;
   }
 }

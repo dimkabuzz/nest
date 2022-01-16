@@ -1,0 +1,35 @@
+.banner {
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  height: 18vw;
+  max-height: 28rem;
+  padding: 0 5rem;
+  border-radius: 1rem;
+
+  &__text {
+    h4 {
+      min-height: 12rem;
+      transition: all 0.3s ease;
+    }
+
+    &:hover > h4 {
+      transform: translateY(-0.5rem);
+    }
+  }
+
+  &--bg1 {
+    background: url("../imgs/banner/banner-1.png") no-repeat center center;
+    background-size: cover;
+  }
+
+  &--bg2 {
+    background: url("../imgs/banner/banner-2.png") no-repeat center center;
+    background-size: cover;
+  }
+
+  &--bg3 {
+    background: url("../imgs/banner/banner-3.png") no-repeat center center;
+    background-size: cover;
+  }
+}
