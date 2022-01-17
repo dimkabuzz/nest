@@ -163,7 +163,7 @@ h6 {
 .btn:hover, .btn:active {
   background-color: #29a56c;
 }
-.btn--subscribe {
+.btn--subscribe, .btn--subscribe:link, .btn--subscribe:visited {
   height: 6.4rem;
   padding: 0 4rem;
   font-weight: 500;
@@ -171,7 +171,7 @@ h6 {
   letter-spacing: 0.5px;
   border-radius: 5rem;
 }
-.btn--shop {
+.btn--shop, .btn--shop:link, .btn--shop:visited {
   font-size: 1.2rem !important;
   height: 3.1rem !important;
   padding: 0 0.8rem 0 1.2rem !important;
@@ -179,7 +179,7 @@ h6 {
   letter-spacing: 0.5px;
   transition: all 0.3s linear;
 }
-.btn--shop i {
+.btn--shop i, .btn--shop:link i, .btn--shop:visited i {
   font-size: 14px;
   transition: 0.3s;
 }
@@ -190,9 +190,7 @@ h6 {
   margin-left: 0.5rem;
 }
 
-.slider-arrow,
-.slider-arrow:link,
-.slider-arrow:visited {
+.slider-arrow, .slider-arrow:link, .slider-arrow:visited {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,28 +198,22 @@ h6 {
   border-radius: 50%;
   border: none;
 }
-
-.slider-arrow:hover,
-.slider-arrow:active {
+.slider-arrow:hover, .slider-arrow:active {
   background: #3bb77e;
   color: #fff;
 }
-
 .slider-arrow--hero {
   width: 4.5rem;
   height: 4.5rem;
   font-size: inherit;
 }
-
 .slider-arrow--tab {
   width: 4rem;
   height: 4rem;
   font-size: 2.4rem;
 }
 
-.slider-dot,
-.slider-dot:link,
-.slider-dot:visited {
+.slider-dot, .slider-dot:link, .slider-dot:visited {
   width: 1.5rem;
   height: 1.5rem;
   background: none;
@@ -229,17 +221,13 @@ h6 {
   border: 1px solid #253d4e;
   transition-timing-function: linear;
 }
-
-.slider-dot:hover,
-.slider-dot:active {
+.slider-dot:hover, .slider-dot:active {
   background: #bce3c9;
 }
-
 .slider-dot--active {
   background: #3bb77e;
   border-color: #3bb77e;
 }
-
 .slider-dot--active:hover {
   background: #3bb77e;
   border-color: #3bb77e;
@@ -274,7 +262,7 @@ h6 {
   border-radius: 1rem;
 }
 .banner__text h4 {
-  min-height: 12rem;
+  min-height: 11.5rem;
   transition: all 0.3s ease;
 }
 .banner__text:hover > h4 {
