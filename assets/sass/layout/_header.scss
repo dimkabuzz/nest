@@ -82,24 +82,25 @@
 
   &__actions {
     display: flex;
+    gap: 2rem;
     margin-left: 1rem;
   }
 
   &__action-item {
-    display: flex;
     position: relative;
 
-    &:not(:last-child) {
-      margin-right: 2rem;
+    a {
+      display: flex;
+      align-items: baseline;
     }
 
     img {
       max-width: 2.5rem;
       display: block;
+    }
 
-      &:not(:last-child) {
-        margin-right: 1rem;
-      }
+    &:not(:last-child) img {
+      margin-right: 1rem;
     }
   }
 
@@ -119,7 +120,6 @@
   }
 
   &__action-label {
-    padding-top: 0.6rem;
     display: block;
   }
 
@@ -158,27 +158,5 @@
   &__hotline-support {
     font-size: $font-xxs;
     letter-spacing: 0.9px;
-  }
-}
-
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 4.4rem;
-
-  &__nav {
-    display: flex;
-    align-items: flex-end;
-  }
-
-  h3 {
-    margin-right: 3rem;
-  }
-
-  &__arrows {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 11rem;
-    width: 9rem;
   }
 }
