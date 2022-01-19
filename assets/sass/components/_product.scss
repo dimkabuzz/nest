@@ -1,0 +1,16 @@
+.product {
+  &__rating {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 1.4rem;
+    }
+
+    span {
+      font-size: $font-sm;
+      color: $color-muted;
+      margin-left: 1rem;
+    }
+  }
+}

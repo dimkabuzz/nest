@@ -92,11 +92,11 @@
     a {
       display: flex;
       align-items: baseline;
-    }
 
-    img {
-      max-width: 2.5rem;
-      display: block;
+      img {
+        max-width: 2.5rem;
+        display: block;
+      }
     }
 
     &:not(:last-child) img {
@@ -121,6 +121,7 @@
 
   &__action-label {
     display: block;
+    color: $color-text;
   }
 
   &__bottom {

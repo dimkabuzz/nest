@@ -65,6 +65,25 @@
       margin-left: 0.5rem;
     }
   }
+
+  &--add {
+    &,
+    &:link,
+    &:visited {
+      font-size: $font-sm;
+      font-family: $font-text;
+      height: 3.6rem;
+      gap: 0.5rem;
+      color: $color-brand;
+      background-color: $background-3;
+      border-radius: 0.4rem;
+    }
+
+    &:hover {
+      color: #fff;
+      transform: translateY(-0.3rem);
+    }
+  }
 }
 
 .slider-arrow {
