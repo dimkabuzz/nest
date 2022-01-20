@@ -1,4 +1,6 @@
 .product-card {
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
   border: 1px solid $border-color;
   background-color: #fff;
@@ -8,7 +10,6 @@
   transition: 0.2s;
 
   &__img-box {
-    overflow: hidden;
     position: relative;
   }
 
@@ -145,6 +146,9 @@
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   &__category {
@@ -190,7 +194,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 1.5rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
   }
 
   &__price {
@@ -205,6 +210,27 @@
     color: $color-grey-4;
     text-decoration: line-through;
     margin-left: 0.7rem;
+  }
+
+  &__progress {
+    width: 100%;
+    font-size: $font-xs;
+    color: $color-heading;
+    margin: 1.5rem 0;
+
+    &--full {
+      height: 0.6rem;
+      margin-bottom: 0.8rem;
+      background-color: #e9ecef;
+      border-radius: 0.25rem;
+      overflow: hidden;
+    }
+
+    &--score {
+      width: 50%;
+      height: inherit;
+      background-color: $color-brand;
+    }
   }
 
   &:hover &__img--default {

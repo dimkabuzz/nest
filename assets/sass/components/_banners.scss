@@ -2,12 +2,14 @@
   display: flex;
   flex: 1 0 auto;
   align-items: center;
-  height: 18vw;
-  max-height: 28rem;
-  padding: 0 5rem;
+  padding: 5rem;
   border-radius: 1rem;
 
   &__text {
+    h2 {
+      margin-bottom: 10rem;
+    }
+
     h4 {
       min-height: 11.5rem;
       transition: all 0.3s ease;
@@ -30,6 +32,11 @@
 
   &--bg3 {
     background: url("../imgs/banner/banner-3.png") no-repeat center center;
+    background-size: cover;
+  }
+
+  &--bg4 {
+    background: url("../imgs/banner/banner-4.png") no-repeat center bottom;
     background-size: cover;
   }
 }

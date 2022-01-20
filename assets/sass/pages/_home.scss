@@ -108,6 +108,9 @@
   &__wrap {
     display: flex;
     gap: 2.4rem;
+    height: 18vw;
+    min-height: 14.6rem;
+    max-height: 28rem;
   }
 }
 
@@ -118,5 +121,24 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24.5rem, 1fr));
     grid-gap: 2.4rem;
+  }
+}
+
+.bestsells {
+  padding: 2.5rem 0;
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: minmax(min-content, 37.8rem) 1fr;
+    grid-gap: 2.4rem;
+  }
+
+  &__list {
+    overflow: hidden;
+  }
+
+  &__track {
+    display: flex;
+    gap: 2.4rem;
   }
 }
