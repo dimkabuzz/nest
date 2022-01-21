@@ -186,3 +186,16 @@
     }
   }
 }
+
+.newsletter {
+  padding: 2.5rem 0;
+
+  &__wrap {
+    min-height: 23rem;
+    padding: 8.4rem 7.8rem;
+    border-radius: 2rem;
+    background: url("../imgs/banner/banner-10.png") no-repeat center,
+      url("../imgs/banner/banner-9.png") no-repeat bottom right 7.2rem;
+    background-size: cover, auto 85%;
+  }
+}
