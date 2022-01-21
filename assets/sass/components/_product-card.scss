@@ -16,6 +16,7 @@
   &__img {
     display: block;
     width: 100%;
+    border-radius: 1.5rem;
     transition: 0.25s opacity, 0.25s visibility,
       transform 1.5s cubic-bezier(0, 0, 0.2, 1);
 
@@ -149,6 +150,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    z-index: 333;
   }
 
   &__category {
@@ -166,10 +168,6 @@
     }
   }
 
-  h6 {
-    margin-bottom: 0.5rem;
-  }
-
   &__title {
     &:link,
     &:visited {
@@ -180,9 +178,6 @@
     &:active {
       color: $color-brand;
     }
-  }
-
-  &__rating {
   }
 
   &__vendor {
@@ -255,5 +250,65 @@
   &:hover {
     border: 1px solid $border-color-2;
     box-shadow: $box-shadown-2;
+  }
+}
+
+.deal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__countdawn {
+    position: absolute;
+    top: -8rem;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.4rem;
+    width: 100%;
+  }
+
+  &__countdawn-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 6rem;
+    height: 6.4rem;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    background-color: #fff;
+  }
+
+  &__countdawn-amount {
+    font-size: 2rem;
+    font-family: $font-heading;
+    font-weight: 500;
+    line-height: 1;
+    color: $color-brand;
+    transition: 0.2s;
+
+    &:hover {
+      transform: translateY(-0.4rem);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 86%;
+    height: 100%;
+    padding: 2.5rem 3rem;
+    margin-top: -9rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: $box-shadown-2;
+    z-index: 33;
+    position: relative;
+    transition: 0.3s;
+  }
+
+  &:hover &__content {
+    transform: translateY(-0.5rem);
   }
 }

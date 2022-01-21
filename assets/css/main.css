@@ -89,6 +89,10 @@ html {
   margin-top: 2rem;
 }
 
+.mb-5 {
+  margin-bottom: 0.5rem;
+}
+
 .w-100 {
   width: 100%;
 }
@@ -180,6 +184,16 @@ h6 {
   display: flex;
   gap: 1rem;
   padding-left: 11rem;
+}
+.section-header__show-all:link, .section-header__show-all:visited {
+  color: #7e7e7e;
+}
+.section-header__show-all:hover, .section-header__show-all:active {
+  color: #3bb77e;
+}
+.section-header__show-all i {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
 }
 
 .btn, .btn:link, .btn:visited {
@@ -384,6 +398,7 @@ h6 {
 .product-card__img {
   display: block;
   width: 100%;
+  border-radius: 1.5rem;
   transition: 0.25s opacity, 0.25s visibility, transform 1.5s cubic-bezier(0, 0, 0.2, 1);
 }
 .product-card__img--default {
@@ -487,6 +502,7 @@ h6 {
   display: flex;
   flex-direction: column;
   height: 100%;
+  z-index: 333;
 }
 .product-card__category:link, .product-card__category:visited {
   display: inline-block;
@@ -496,9 +512,6 @@ h6 {
 }
 .product-card__category:hover, .product-card__category:active {
   color: #3bb77e;
-}
-.product-card h6 {
-  margin-bottom: 0.5rem;
 }
 .product-card__title:link, .product-card__title:visited {
   color: inherit;
@@ -565,6 +578,60 @@ h6 {
 .product-card:hover {
   border: 1px solid #bce3c9;
   box-shadow: 0.5rem 0.5rem 1.5rem rgba(0, 0, 0, 0.05);
+}
+
+.deal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.deal-card__countdawn {
+  position: absolute;
+  top: -8rem;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.4rem;
+  width: 100%;
+}
+.deal-card__countdawn-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 6rem;
+  height: 6.4rem;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  background-color: #fff;
+}
+.deal-card__countdawn-amount {
+  font-size: 2rem;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  line-height: 1;
+  color: #3bb77e;
+  transition: 0.2s;
+}
+.deal-card__countdawn-amount:hover {
+  transform: translateY(-0.4rem);
+}
+.deal-card__content {
+  display: flex;
+  flex-direction: column;
+  width: 86%;
+  height: 100%;
+  padding: 2.5rem 3rem;
+  margin-top: -9rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 1.5rem rgba(0, 0, 0, 0.05);
+  z-index: 33;
+  position: relative;
+  transition: 0.3s;
+}
+.deal-card:hover .deal-card__content {
+  transform: translateY(-0.5rem);
 }
 
 .header__top {
@@ -872,6 +939,14 @@ h6 {
   overflow: hidden;
 }
 .bestsells__track {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.deals {
+  padding: 2.5rem 0;
+}
+.deals__wrap {
   display: flex;
   gap: 2.4rem;
 }

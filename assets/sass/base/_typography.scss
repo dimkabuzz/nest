@@ -88,4 +88,21 @@ h6 {
     gap: 1rem;
     padding-left: 11rem;
   }
+
+  &__show-all {
+    &:link,
+    &:visited {
+      color: $color-text;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-brand;
+    }
+
+    i {
+      font-size: $font-xxs;
+      margin-left: 0.5rem;
+    }
+  }
 }
