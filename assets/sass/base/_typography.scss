@@ -106,3 +106,20 @@ h6 {
     }
   }
 }
+
+.sidebar-header {
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid $border-color;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -0.1rem;
+    left: 0;
+    height: 0.2rem;
+    width: 8rem;
+    background-color: $border-color-2;
+  }
+}

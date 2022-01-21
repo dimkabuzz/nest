@@ -151,3 +151,38 @@
     gap: 2.4rem;
   }
 }
+
+.toplists {
+  padding: 2.5rem 0;
+
+  &__wrap {
+    display: flex;
+    gap: 2.4rem;
+  }
+
+  &__column {
+    flex: 1 0 27rem;
+  }
+
+  &__products {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+
+    img {
+      max-width: 11rem;
+      border-radius: 1rem;
+    }
+
+    &:hover {
+      transform: translateY(-0.5rem);
+    }
+  }
+}

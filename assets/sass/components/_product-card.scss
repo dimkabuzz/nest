@@ -1,4 +1,5 @@
 .product-card {
+  flex: 1 0 20rem;
   display: flex;
   flex-direction: column;
   padding: 2rem;
@@ -11,6 +12,7 @@
 
   &__img-box {
     position: relative;
+    flex-shrink: 0;
   }
 
   &__img {
@@ -254,6 +256,7 @@
 }
 
 .deal-card {
+  flex: 1 0 25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
