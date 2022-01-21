@@ -39,4 +39,28 @@
     background: url("../imgs/banner/banner-4.png") no-repeat center bottom;
     background-size: cover;
   }
+
+  &--feature {
+    gap: 2rem;
+    padding: 2rem;
+    background-color: $background-2;
+
+    img {
+      max-width: 6rem;
+      transition: 0.3s;
+    }
+
+    h5 {
+      font-weight: 600;
+      color: $color-grey-2;
+    }
+
+    p {
+      color: $color-grey-4;
+    }
+
+    &:hover img {
+      transform: translateY(-0.5rem);
+    }
+  }
 }

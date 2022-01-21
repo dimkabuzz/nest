@@ -24,10 +24,10 @@
                 <img src="assets/imgs/theme/logo.svg" alt="Logo Nest" />
               </a>
             </div>
-            <div class="header__search">
-              <form action="#">
+            <div class="header__search-wrap">
+              <form class="header-search" action="#">
                 <select
-                  class="header__category-select"
+                  class="header-search__category-select"
                   data="1"
                   aria-hidden="true"
                 >
@@ -44,10 +44,10 @@
                   <option data="22">Ice cream</option>
                 </select>
                 <i class="fi-rs-angle-down"></i>
-                <span class="header__separate-line"></span>
+                <span class="header-search__separate-line"></span>
                 <input
                   type="text"
-                  class="header__search-input"
+                  class="header-search__search-input"
                   placeholder="Search for items..."
                 />
               </form>
@@ -186,6 +186,7 @@
         </div>
       </div>
     </header>
+
     <main>
       <section class="hero">
         <div class="container">
@@ -2080,7 +2081,9 @@
           </div>
         </div>
       </section>
+    </main>
 
+    <footer>
       <section class="newsletter">
         <div class="container">
           <div class="newsletter__wrap">
@@ -2101,7 +2104,48 @@
           </div>
         </div>
       </section>
-    </main>
-    <footer class="footer"></footer>
+
+      <section class="features">
+        <div class="container">
+          <div class="features__wrap">
+            <div class="banner banner--feature">
+              <img src="assets/imgs/theme/icons/icon-1.svg" alt="" />
+              <div>
+                <h5 class="mb-5">Best prices & offers</h5>
+                <p>Orders $50 or more</p>
+              </div>
+            </div>
+            <div class="banner banner--feature">
+              <img src="assets/imgs/theme/icons/icon-2.svg" alt="" />
+              <div>
+                <h5 class="mb-5">Free delivery</h5>
+                <p>24/7 amazing services</p>
+              </div>
+            </div>
+            <div class="banner banner--feature">
+              <img src="assets/imgs/theme/icons/icon-3.svg" alt="" />
+              <div>
+                <h5 class="mb-5">Great daily deal</h5>
+                <p>When you sign up</p>
+              </div>
+            </div>
+            <div class="banner banner--feature">
+              <img src="assets/imgs/theme/icons/icon-4.svg" alt="" />
+              <div>
+                <h5 class="mb-5">Wide assortment</h5>
+                <p>Mega Discounts</p>
+              </div>
+            </div>
+            <div class="banner banner--feature">
+              <img src="assets/imgs/theme/icons/icon-5.svg" alt="" />
+              <div>
+                <h5 class="mb-5">Easy returns</h5>
+                <p>Within 30 days</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
   </body>
 </html>
