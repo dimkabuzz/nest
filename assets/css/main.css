@@ -93,8 +93,16 @@ html {
   margin-bottom: 0.5rem;
 }
 
+.mb-15 {
+  margin-bottom: 1.5rem;
+}
+
 .mb-20 {
   margin-bottom: 2rem;
+}
+
+.mb-30 {
+  margin-bottom: 3rem;
 }
 
 .mb-45 {
@@ -135,6 +143,10 @@ button {
 ul,
 ol {
   list-style: none;
+}
+
+strong {
+  font-weight: 600;
 }
 
 .fi-rs-angle-down {
@@ -880,8 +892,38 @@ h6 {
   padding: 2.5rem 0;
 }
 .features__wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 2.4rem;
+}
+
+.footer-links {
+  padding: 2.5rem 0;
+}
+.footer-links__wrap {
   display: flex;
+  flex-wrap: wrap;
   gap: 2.4rem;
+}
+.footer-links__column {
+  flex: 1 0 12rem;
+  color: #253d4e;
+}
+.footer-links__column:first-child, .footer-links__column:last-child {
+  min-width: 30rem;
+}
+.footer-links__column h4 {
+  margin: 1.5rem 0 2rem 0;
+}
+.footer-links__column li {
+  margin-bottom: 1.3rem;
+}
+.footer-links__column a:link, .footer-links__column a:visited {
+  color: inherit;
+}
+.footer-links__column a:hover, .footer-links__column a:active {
+  padding-left: 0.5rem;
+  color: #3bb77e;
 }
 
 .hero {
@@ -1021,11 +1063,9 @@ h6 {
   padding: 2.5rem 0;
 }
 .toplists__wrap {
-  display: flex;
-  gap: 2.4rem;
-}
-.toplists__column {
-  flex: 1 0 27rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  grid-gap: 2.4rem;
 }
 .toplists__products {
   display: flex;

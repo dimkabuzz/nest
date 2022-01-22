@@ -15,7 +15,49 @@
   padding: 2.5rem 0;
 
   &__wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2.4rem;
+  }
+}
+
+.footer-links {
+  padding: 2.5rem 0;
+
+  &__wrap {
     display: flex;
+    flex-wrap: wrap;
     gap: 2.4rem;
+  }
+
+  &__column {
+    flex: 1 0 12rem;
+    color: $color-heading;
+
+    &:first-child,
+    &:last-child {
+      min-width: 30rem;
+    }
+
+    h4 {
+      margin: 1.5rem 0 2rem 0;
+    }
+
+    li {
+      margin-bottom: 1.3rem;
+    }
+
+    a {
+      &:link,
+      &:visited {
+        color: inherit;
+      }
+
+      &:hover,
+      &:active {
+        padding-left: 0.5rem;
+        color: $color-brand;
+      }
+    }
   }
 }

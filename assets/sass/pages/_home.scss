@@ -156,12 +156,13 @@
   padding: 2.5rem 0;
 
   &__wrap {
-    display: flex;
-    gap: 2.4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    grid-gap: 2.4rem;
   }
 
   &__column {
-    flex: 1 0 27rem;
+    // flex: 1 0 27rem;
   }
 
   &__products {
