@@ -6,8 +6,8 @@
     padding: 8.4rem 7.8rem;
     border-radius: 2rem;
     background: url("../imgs/banner/banner-10.png") no-repeat center,
-      url("../imgs/banner/banner-9.png") no-repeat bottom right 7.2rem;
-    background-size: cover, auto 85%;
+      url("../imgs/banner/banner-9.png") no-repeat bottom right 5.3rem;
+    background-size: cover, 40% auto;
   }
 }
 
@@ -32,11 +32,15 @@
 
   &__column {
     flex: 1 0 12rem;
+    max-width: 22.4rem;
     color: $color-heading;
 
-    &:first-child,
-    &:last-child {
+    &:first-child {
       min-width: 30rem;
+    }
+
+    &:last-child {
+      max-width: 30rem;
     }
 
     h4 {
@@ -59,5 +63,32 @@
         color: $color-brand;
       }
     }
+  }
+
+  &__download {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin: 3rem 0;
+
+    img {
+      max-width: 12.8rem;
+    }
+
+    a:hover {
+      transform: translateY(-0.5rem);
+      padding-left: 0;
+    }
+  }
+}
+
+.footer-bottom {
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid $border-color-2;
+    padding: 3rem 0;
+    font-size: $font-sm;
+    line-height: 2.4rem;
   }
 }

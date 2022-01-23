@@ -109,6 +109,10 @@ html {
   margin-bottom: 4.5rem;
 }
 
+.mr-30 {
+  margin-right: 3rem;
+}
+
 .w-100 {
   width: 100%;
 }
@@ -690,7 +694,6 @@ h6 {
 }
 
 .deal-card {
-  flex: 1 0 25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -742,6 +745,63 @@ h6 {
 }
 .deal-card:hover .deal-card__content {
   transform: translateY(-0.5rem);
+}
+
+.hotline {
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 1.2rem;
+}
+.hotline__icon {
+  width: 3.6rem;
+}
+.hotline__icon--footer {
+  width: 3rem;
+  opacity: 0.5;
+}
+.hotline__text {
+  line-height: 1;
+}
+.hotline__number {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: 2.6rem;
+  color: #3bb77e;
+}
+.hotline__support {
+  font-size: 1.2rem;
+  letter-spacing: 0.9px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.social__links {
+  flex: 1;
+  display: flex;
+  gap: 0.5rem;
+}
+.social__btn:link, .social__btn:visited {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #3bb77e;
+  transition-duration: 0.5s;
+}
+.social__btn:hover, .social__btn:active {
+  transform: translateY(-0.3rem);
+}
+.social__btn:hover img, .social__btn:active img {
+  opacity: 0.75;
+}
+.social__btn img {
+  width: 1.6rem;
+  transition: 0.3s;
 }
 
 .header__top {
@@ -808,25 +868,6 @@ h6 {
   align-items: center;
   gap: 1.8rem;
 }
-.header__hotline {
-  display: flex;
-  flex-shrink: 0;
-  gap: 1.2rem;
-}
-.header__hotline-icon {
-  width: 3.6rem;
-}
-.header__hotline-number {
-  font-family: "Quicksand", sans-serif;
-  font-weight: 700;
-  font-size: 2.6rem;
-  line-height: 1;
-  color: #3bb77e;
-}
-.header__hotline-support {
-  font-size: 1.2rem;
-  letter-spacing: 0.9px;
-}
 
 .main-nav ul {
   display: flex;
@@ -884,8 +925,8 @@ h6 {
   min-height: 23rem;
   padding: 8.4rem 7.8rem;
   border-radius: 2rem;
-  background: url("../imgs/banner/banner-10.png") no-repeat center, url("../imgs/banner/banner-9.png") no-repeat bottom right 7.2rem;
-  background-size: cover, auto 85%;
+  background: url("../imgs/banner/banner-10.png") no-repeat center, url("../imgs/banner/banner-9.png") no-repeat bottom right 5.3rem;
+  background-size: cover, 40% auto;
 }
 
 .features {
@@ -907,10 +948,14 @@ h6 {
 }
 .footer-links__column {
   flex: 1 0 12rem;
+  max-width: 22.4rem;
   color: #253d4e;
 }
-.footer-links__column:first-child, .footer-links__column:last-child {
+.footer-links__column:first-child {
   min-width: 30rem;
+}
+.footer-links__column:last-child {
+  max-width: 30rem;
 }
 .footer-links__column h4 {
   margin: 1.5rem 0 2rem 0;
@@ -924,6 +969,28 @@ h6 {
 .footer-links__column a:hover, .footer-links__column a:active {
   padding-left: 0.5rem;
   color: #3bb77e;
+}
+.footer-links__download {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 3rem 0;
+}
+.footer-links__download img {
+  max-width: 12.8rem;
+}
+.footer-links__download a:hover {
+  transform: translateY(-0.5rem);
+  padding-left: 0;
+}
+
+.footer-bottom__wrap {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #bce3c9;
+  padding: 3rem 0;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
 }
 
 .hero {
@@ -980,9 +1047,8 @@ h6 {
   gap: 2.4rem;
 }
 .featured__card {
+  flex: 1;
   text-align: center;
-  width: 100%;
-  max-width: 13.7rem;
   min-height: 18rem;
   padding-top: 2rem;
   margin-bottom: 2rem;
@@ -1055,8 +1121,9 @@ h6 {
   padding: 2.5rem 0;
 }
 .deals__wrap {
-  display: flex;
-  gap: 2.4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  grid-gap: 2.4rem;
 }
 
 .toplists {
