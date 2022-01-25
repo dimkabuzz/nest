@@ -1,0 +1,78 @@
+.slider {
+  &__arrows {
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    z-index: 3333;
+  }
+
+  &__dots {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__arrow {
+    &,
+    &:link,
+    &:visited {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $background-1;
+      border-radius: 50%;
+      border: none;
+    }
+
+    &:hover,
+    &:active {
+      background: $color-brand;
+      color: #fff;
+    }
+
+    &--hero {
+      width: 4.5rem;
+      height: 4.5rem;
+      font-size: inherit;
+    }
+
+    &--tab {
+      width: 4rem;
+      height: 4rem;
+      font-size: 2.4rem;
+    }
+  }
+
+  &__dot {
+    &,
+    &:link,
+    &:visited {
+      width: 1.5rem;
+      height: 1.5rem;
+      background: none;
+      border-radius: 50%;
+      border: 1px solid $color-heading;
+      transition-timing-function: linear;
+    }
+
+    &:hover,
+    &:active {
+      background: $border-color-2;
+    }
+
+    &--active {
+      background: $color-brand;
+      border-color: $color-brand;
+
+      &:hover {
+        background: $color-brand;
+        border-color: $color-brand;
+      }
+    }
+  }
+}

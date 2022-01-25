@@ -22,13 +22,6 @@
   }
 
   &__arrows {
-    position: absolute;
-    left: 2rem;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
     opacity: 0;
     transition: opacity 0.5s ease 0s;
   }
@@ -36,13 +29,6 @@
   &:hover > &__arrows {
     opacity: 1;
     transition: opacity 0.5s ease 0s;
-  }
-
-  &__dots {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
   }
 }
 
@@ -118,7 +104,7 @@
 
   &__wrap {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24.5rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25.3rem, 1fr));
     grid-gap: 2.4rem;
   }
 }
@@ -133,12 +119,17 @@
   }
 
   &__list {
+    position: relative;
     overflow: hidden;
   }
 
   &__track {
     display: flex;
     gap: 2.4rem;
+  }
+
+  &__arrows {
+    margin-top: -6rem;
   }
 }
 
@@ -147,7 +138,7 @@
 
   &__wrap {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     grid-gap: 2.4rem;
   }
 }
@@ -157,7 +148,7 @@
 
   &__wrap {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
     grid-gap: 2.4rem;
   }
 
