@@ -91,14 +91,13 @@
 
   &__item {
     position: relative;
-    line-height: 1;
   }
 
   &__link {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 1.4rem;
+    font-size: $font-sm;
     color: $color-text;
     padding: 0 1.5rem;
   }
@@ -129,5 +128,110 @@
 
   &--modify {
     top: -2.5rem;
+  }
+}
+
+.action-dropdawn {
+  position: absolute;
+  top: calc(100% + 2rem);
+  right: 0;
+  min-width: 20rem;
+  width: max-content;
+  max-width: 50rem;
+  padding: 3rem 2rem 2.7rem;
+  background-color: #fff;
+  border: 1px solid $border-color;
+  border-radius: 1rem;
+  box-shadow: $box-shadown-2;
+  z-index: 3333;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__item {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: flex;
+      gap: 1rem;
+      font-size: $font-sm;
+      color: $color-heading;
+      line-height: 2.4rem;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-brand;
+    }
+  }
+
+  &__product-text {
+    flex: 1;
+    font-family: $font-heading;
+    font-weight: 500;
+    color: $color-heading;
+    line-height: 1;
+    margin-top: 0.6rem;
+  }
+
+  &__product-link {
+    &:link,
+    &:visited {
+      font-weight: 500;
+      color: $color-brand;
+      line-height: 1;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-heading;
+    }
+  }
+
+  &__delete {
+    &:link,
+    &:visited {
+      font-size: 1.8rem;
+      color: #696969;
+      margin-top: 0.6rem;
+    }
+
+    &:hover,
+    &:active {
+      color: #333;
+    }
+  }
+
+  &__img {
+    max-width: 8rem;
+  }
+
+  &__footer {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    grid-gap: 2.5rem;
+    font-family: $font-heading;
+    font-weight: 700;
+    color: #9b9b9b;
+    line-height: 1.2;
+    padding-top: 1.7rem;
+    border-top: 2px solid #f3f3f3;
+  }
+
+  &__product-price {
+    font-size: 1.8rem;
+    color: $color-brand;
+    justify-self: end;
   }
 }

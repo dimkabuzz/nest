@@ -104,4 +104,44 @@
       transform: translateY(-0.5rem);
     }
   }
+
+  &--cart-view,
+  &--cart-checkout {
+    &:link,
+    &:visited {
+      height: unset;
+      font-size: $font-sm;
+      font-weight: 400;
+      line-height: 1;
+      padding: 1rem 2rem;
+      border-radius: 0.4rem;
+      border: 2px solid $color-brand;
+    }
+  }
+
+  &--cart-view {
+    &:link,
+    &:visited {
+      color: $color-brand;
+      background-color: #fff;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: $color-brand-2;
+    }
+  }
+
+  &--cart-checkout {
+    &:link,
+    &:visited {
+      color: #fff;
+      background-color: $color-brand;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: $color-brand-2;
+    }
+  }
 }
