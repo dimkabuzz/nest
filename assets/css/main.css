@@ -116,6 +116,10 @@ html {
   align-items: flex-start !important;
 }
 
+.position-static {
+  position: static !important;
+}
+
 .mt-20 {
   margin-top: 2rem;
 }
@@ -427,6 +431,15 @@ h6 {
   color: #fff;
   background-color: #fdc040;
 }
+.btn--mega:link, .btn--mega:visited {
+  height: 4.2rem;
+  padding: 0 2.2rem;
+  border-radius: 2.6rem;
+  z-index: 33;
+}
+.btn--mega:hover, .btn--mega:active {
+  background-color: #fd6e6e;
+}
 
 .subscriber {
   display: flex;
@@ -442,6 +455,7 @@ h6 {
   font-size: inherit;
   border: none;
   background: url("../imgs/theme/icons/icon-plane.png") no-repeat 2.5rem center;
+  background-size: 1.6rem;
 }
 .subscriber__input:focus {
   outline: none;
@@ -485,11 +499,14 @@ h6 {
 }
 .header-search__search-input {
   flex: 1;
+  font-size: 1.4rem;
+  font-family: inherit;
   border: none;
   margin-left: 1.7rem;
   background-image: url(../imgs/theme/icons/search.png);
   background-position: right center;
   background-repeat: no-repeat;
+  background-size: 3.9rem;
 }
 .header-search__search-input:focus {
   outline: none;
@@ -546,6 +563,69 @@ h6 {
 }
 .banner--feature:hover img {
   transform: translateY(-0.5rem);
+}
+
+.mega-banner {
+  display: flex;
+  justify-content: space-between;
+  min-height: 20vw;
+  padding: 3rem;
+  font-family: "Quicksand", sans-serif;
+  background: url("../imgs/banner/banner-menu.png") no-repeat center center;
+  background-size: cover;
+  border-radius: 2rem;
+  position: relative;
+}
+.mega-banner__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.mega-banner__hot {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #253d4e;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+.mega-banner h4 {
+  line-height: 1.5;
+  margin-bottom: 1.1rem;
+}
+.mega-banner__price {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #81b13d;
+  line-height: 1;
+  margin-bottom: 2.8rem;
+}
+.mega-banner__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #333;
+  background-color: #ffd55a;
+}
+.mega-banner__label-nr {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.mega-banner__cover-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .product__rating {
@@ -939,6 +1019,7 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 .header__logo {
   margin-right: 7rem;
@@ -973,7 +1054,7 @@ h6 {
   align-items: baseline;
 }
 .header-action__img {
-  max-width: 2.5rem;
+  width: 2.5rem;
   display: block;
 }
 .header-action:not(:last-child) .header-action__img {
@@ -1019,6 +1100,9 @@ h6 {
   font-family: "Quicksand", sans-serif;
   font-weight: 700;
 }
+.main-nav img {
+  width: 2rem;
+}
 .main-nav__link {
   display: flex;
   align-items: center;
@@ -1037,6 +1121,11 @@ h6 {
   opacity: 1;
   visibility: visible;
   margin-top: 1.2rem;
+}
+.main-nav__item:hover > .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 0;
 }
 
 .nav-tabs {
@@ -1089,6 +1178,7 @@ h6 {
   justify-content: space-between;
   font-size: 1.4rem;
   color: #7e7e7e;
+  line-height: 1;
   padding: 0 1.5rem;
 }
 .sub-menu__item:hover > .sub-menu__link,
@@ -1199,6 +1289,48 @@ h6 {
   font-size: 1.8rem;
   color: #3bb77e;
   justify-self: end;
+}
+
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 2rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(17rem, 1fr)) minmax(20rem, 50.8rem);
+  column-gap: 2.4rem;
+  padding: 3.5rem;
+  background-color: #fff;
+  border: 1px solid #ececec;
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: 0.5rem 0.5rem 1.5rem rgba(0, 0, 0, 0.05);
+  z-index: 33333;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease 0s;
+}
+.mega-menu__list-title {
+  display: block;
+  font-size: 1.9rem;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 2.8rem;
+}
+.mega-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+.mega-menu__link:link, .mega-menu__link:visited {
+  display: block;
+  font-size: 1.5rem;
+  color: #7e7e7e;
+  line-height: 1.4;
+}
+.mega-menu__link:hover, .mega-menu__link:active {
+  color: #3bb77e;
 }
 
 .newsletter {

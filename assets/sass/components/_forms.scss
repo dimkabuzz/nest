@@ -13,6 +13,7 @@
     border: none;
     background: url("../imgs/theme/icons/icon-plane.png") no-repeat 2.5rem
       center;
+    background-size: 1.6rem;
   }
 
   &__input:focus {
@@ -62,11 +63,14 @@
 
   &__search-input {
     flex: 1;
+    font-size: $font-sm;
+    font-family: inherit;
     border: none;
     margin-left: 1.7rem;
     background-image: url(../imgs/theme/icons/search.png);
     background-position: right center;
     background-repeat: no-repeat;
+    background-size: 3.9rem;
 
     &:focus {
       outline: none;

@@ -17,6 +17,10 @@
     font-weight: 700;
   }
 
+  img {
+    width: 2rem;
+  }
+
   &__link {
     display: flex;
     align-items: center;
@@ -39,6 +43,12 @@
     opacity: 1;
     visibility: visible;
     margin-top: 1.2rem;
+  }
+
+  &__item:hover > .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0;
   }
 }
 
@@ -99,6 +109,7 @@
     justify-content: space-between;
     font-size: $font-sm;
     color: $color-text;
+    line-height: 1;
     padding: 0 1.5rem;
   }
 
@@ -233,5 +244,55 @@
     font-size: 1.8rem;
     color: $color-brand;
     justify-self: end;
+  }
+}
+
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 2rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(17rem, 1fr)) minmax(20rem, 50.8rem);
+  column-gap: 2.4rem;
+  padding: 3.5rem;
+  background-color: #fff;
+  border: 1px solid $border-color;
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: $box-shadown-2;
+  z-index: 33333;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease 0s;
+
+  &__list-title {
+    display: block;
+    font-size: $font-xl;
+    font-family: $font-heading;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 2.8rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: block;
+      font-size: 1.5rem;
+      color: $color-text;
+      line-height: 1.4;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-brand;
+    }
   }
 }
