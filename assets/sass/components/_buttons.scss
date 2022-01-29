@@ -159,4 +159,65 @@
       background-color: $color-danger;
     }
   }
+
+  &--close {
+    &,
+    &:link,
+    &:visited {
+      width: 2.6rem;
+      height: 2.6rem;
+      padding: 0;
+      border-radius: 50%;
+      background-color: $background-3;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0.1rem;
+        height: 1rem;
+        background-color: #111;
+        transition: transform 0.3s;
+      }
+
+      &::before {
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+
+    &:hover,
+    &:active {
+      background-color: $background-3;
+
+      &::before {
+        transform: rotate(315deg);
+      }
+
+      &::after {
+        transform: rotate(405deg);
+      }
+    }
+  }
+
+  &--search {
+    &,
+    &:link,
+    &:visited {
+      position: absolute;
+      right: 0;
+      padding: 0 1.4rem;
+      color: #333;
+      background-color: transparent;
+    }
+
+    &:hover,
+    &:active {
+      color: #fff;
+    }
+  }
 }

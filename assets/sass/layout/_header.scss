@@ -84,3 +84,27 @@
     visibility: visible;
   }
 }
+
+.header-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36rem;
+  min-height: 100vh;
+  padding: 2rem 3rem 3rem;
+  background-color: #fff;
+  z-index: 33333;
+  overflow-y: scroll;
+  box-shadow: 0 0 1.5rem 0 rgb(0 0 0 / 9%);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+  }
+
+  &__logo {
+    width: 10rem;
+  }
+}
