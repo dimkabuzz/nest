@@ -90,13 +90,16 @@
   top: 0;
   left: 0;
   width: 36rem;
-  min-height: 100vh;
+  height: 100vh;
   padding: 2rem 3rem 3rem;
   background-color: #fff;
   z-index: 33333;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   box-shadow: 0 0 1.5rem 0 rgb(0 0 0 / 9%);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  opacity: 0;
+  visibility: hidden;
 
   &__top {
     display: flex;
@@ -106,5 +109,42 @@
 
   &__logo {
     width: 10rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid $border-color;
+  }
+
+  &__info-link {
+    &:link,
+    &:visited {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: $font-sm;
+      font-family: $font-heading;
+      font-weight: 500;
+      color: $color-heading;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-brand;
+    }
+
+    i {
+      color: $color-brand;
+    }
+  }
+
+  &__copyright {
+    font-size: $font-xs;
+    color: $color-muted;
+    line-height: 1.8;
   }
 }

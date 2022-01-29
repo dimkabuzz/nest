@@ -296,3 +296,47 @@
     }
   }
 }
+
+.mobile-menu {
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $border-color;
+    }
+
+    i {
+      font-size: $font-sm;
+      font-weight: 300;
+      color: $color-heading;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      font-size: $font-sm;
+      font-family: $font-heading;
+      font-weight: 700;
+      color: $color-heading;
+      line-height: 1;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-brand;
+    }
+  }
+
+  &__expand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+  }
+}
