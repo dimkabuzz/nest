@@ -30,8 +30,18 @@
   }
 
   &__bottom {
-    border-top: 1px solid $border-color-3;
-    border-bottom: 1px solid $border-color-3;
+    background-color: #fff;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+
+    &--sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      box-shadow: 0 0.8rem 2rem 0 rgb(0 0 0 / 5%);
+      z-index: 11111;
+      animation: 700ms ease-in-out 0s normal none 1 running fadeInDown;
+    }
   }
 
   &__nav {
