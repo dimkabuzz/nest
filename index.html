@@ -93,53 +93,53 @@
                   <span class="header-action__count">2</span>
                   <span class="header-action__label">Cart</span>
                 </a>
-                <div class="action-dropdawn">
-                  <ul class="action-dropdawn__list mb-25">
-                    <li class="action-dropdawn__item">
+                <div class="action-dropdown">
+                  <ul class="action-dropdown__list mb-25">
+                    <li class="action-dropdown__item">
                       <a href="#">
                         <img
-                          class="action-dropdawn__img"
+                          class="action-dropdown__img"
                           src="assets/imgs/shop/thumbnail-3.jpg"
                           alt="Product image"
                         />
                       </a>
-                      <div class="action-dropdawn__product-text">
+                      <div class="action-dropdown__product-text">
                         <h6 class="mb-10">
-                          <a class="action-dropdawn__product-link" href="#"
+                          <a class="action-dropdown__product-link" href="#"
                             >Daisy Casual Bag</a
                           >
                         </h6>
                         <span>1 × $800.00</span>
                       </div>
-                      <a class="action-dropdawn__delete" href="#">
+                      <a class="action-dropdown__delete" href="#">
                         <i class="fi-rs-cross-small"></i>
                       </a>
                     </li>
 
-                    <li class="action-dropdawn__item">
+                    <li class="action-dropdown__item">
                       <a href="#">
                         <img
-                          class="action-dropdawn__img"
+                          class="action-dropdown__img"
                           src="assets/imgs/shop/thumbnail-2.jpg"
                           alt="Product image"
                         />
                       </a>
-                      <div class="action-dropdawn__product-text">
+                      <div class="action-dropdown__product-text">
                         <h6 class="mb-10">
-                          <a class="action-dropdawn__product-link" href="#"
+                          <a class="action-dropdown__product-link" href="#"
                             >Corduroy Shirts</a
                           >
                         </h6>
                         <span>1 × $3200.00</span>
                       </div>
-                      <a class="action-dropdawn__delete" href="#">
+                      <a class="action-dropdown__delete" href="#">
                         <i class="fi-rs-cross-small"></i>
                       </a>
                     </li>
                   </ul>
-                  <div class="action-dropdawn__footer">
+                  <div class="action-dropdown__footer">
                     <span>Total</span>
-                    <span class="action-dropdawn__product-price">$4000.00</span>
+                    <span class="action-dropdown__product-price">$4000.00</span>
                     <a class="btn btn--cart-view" href="#">View cart</a>
                     <a class="btn btn--cart-checkout" href="#">Checkout</a>
                   </div>
@@ -156,35 +156,35 @@
                   />
                   <span class="header-action__label">Account</span>
                 </a>
-                <div class="action-dropdawn">
-                  <ul class="action-dropdawn__list">
-                    <li class="action-dropdawn__item">
-                      <a class="action-dropdawn__link" href="#"
+                <div class="action-dropdown">
+                  <ul class="action-dropdown__list">
+                    <li class="action-dropdown__item">
+                      <a class="action-dropdown__link" href="#"
                         ><i class="fi fi-rs-user"></i>My Account</a
                       >
                     </li>
-                    <li class="action-dropdawn__item">
-                      <a class="action-dropdawn__link" href="#"
+                    <li class="action-dropdown__item">
+                      <a class="action-dropdown__link" href="#"
                         ><i class="fi fi-rs-location-alt"></i>Order Tracking</a
                       >
                     </li>
-                    <li class="action-dropdawn__item">
-                      <a class="action-dropdawn__link" href="#"
+                    <li class="action-dropdown__item">
+                      <a class="action-dropdown__link" href="#"
                         ><i class="fi fi-rs-label"></i>My Voucher</a
                       >
                     </li>
-                    <li class="action-dropdawn__item">
-                      <a class="action-dropdawn__link" href="#"
+                    <li class="action-dropdown__item">
+                      <a class="action-dropdown__link" href="#"
                         ><i class="fi fi-rs-heart"></i>My Wishlist</a
                       >
                     </li>
-                    <li class="action-dropdawn__item">
-                      <a class="action-dropdawn__link" href="#"
+                    <li class="action-dropdown__item">
+                      <a class="action-dropdown__link" href="#"
                         ><i class="fi fi-rs-settings-sliders"></i>Setting</a
                       >
                     </li>
-                    <li class="action-dropdawn__item">
-                      <a class="action-dropdawn__link" href="#"
+                    <li class="action-dropdown__item">
+                      <a class="action-dropdown__link" href="#"
                         ><i class="fi fi-rs-sign-out"></i>Sign out</a
                       >
                     </li>
@@ -199,12 +199,162 @@
         <div class="container">
           <div class="header__wrap">
             <div class="header__nav">
-              <button class="btn">
+              <button class="btn" id="categories-button">
                 <i class="fi-rs-apps"></i>
                 <span class="hide-1200">Browse</span>
                 <span>All Categories</span>
                 <i class="fi-rs-angle-down"></i>
               </button>
+
+              <div class="categories-dropdown hidden">
+                <ul class="categories-dropdown__list">
+                  <li class="categories-dropdown__item">
+                    <a class="categories-dropdown__link" href="#">
+                      <img
+                        src="assets/imgs/theme/icons/category-1.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span>Milk and Dairies</span></a
+                    >
+                  </li>
+                  <li class="categories-dropdown__item">
+                    <a class="categories-dropdown__link" href="#">
+                      <img
+                        src="assets/imgs/theme/icons/category-6.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span>Wines & Drinks</span></a
+                    >
+                  </li>
+                  <li class="categories-dropdown__item">
+                    <a class="categories-dropdown__link" href="#">
+                      <img
+                        src="assets/imgs/theme/icons/category-2.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span>Clothing & beauty</span></a
+                    >
+                  </li>
+                  <li class="categories-dropdown__item">
+                    <a class="categories-dropdown__link" href="#">
+                      <img
+                        src="assets/imgs/theme/icons/category-7.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span>Fresh Seafood</span></a
+                    >
+                  </li>
+                  <li class="categories-dropdown__item">
+                    <a class="categories-dropdown__link" href="#">
+                      <img
+                        src="assets/imgs/theme/icons/category-3.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span>Pet Foods & Toy</span></a
+                    >
+                  </li>
+                  <li class="categories-dropdown__item">
+                    <a class="categories-dropdown__link" href="#">
+                      <img
+                        src="assets/imgs/theme/icons/category-8.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span>Fast food</span></a
+                    >
+                  </li>
+                  <li class="categories-dropdown__item">
+                    <a class="categories-dropdown__link" href="#">
+                      <img
+                        src="assets/imgs/theme/icons/category-4.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span>Baking material</span></a
+                    >
+                  </li>
+                  <li class="categories-dropdown__item">
+                    <a class="categories-dropdown__link" href="#">
+                      <img
+                        src="assets/imgs/theme/icons/category-9.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span>Vegetables</span></a
+                    >
+                  </li>
+                  <li class="categories-dropdown__item">
+                    <a class="categories-dropdown__link" href="#">
+                      <img
+                        src="assets/imgs/theme/icons/category-5.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span>Fresh Fruit</span></a
+                    >
+                  </li>
+                  <li class="categories-dropdown__item">
+                    <a class="categories-dropdown__link" href="#">
+                      <img
+                        src="assets/imgs/theme/icons/category-10.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span>Bread and Juice</span></a
+                    >
+                  </li>
+                  <li class="categories-dropdown__item">
+                    <a class="categories-dropdown__link" href="#">
+                      <img
+                        src="assets/imgs/theme/icons/icon-1.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span>Milks and Dairies</span></a
+                    >
+                  </li>
+                  <li class="categories-dropdown__item">
+                    <a class="categories-dropdown__link" href="#">
+                      <img
+                        src="assets/imgs/theme/icons/icon-3.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span>Wines & Drinks</span></a
+                    >
+                  </li>
+                  <li class="categories-dropdown__item">
+                    <a class="categories-dropdown__link" href="#">
+                      <img
+                        src="assets/imgs/theme/icons/icon-2.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span>Clothing & beauty</span></a
+                    >
+                  </li>
+                  <li class="categories-dropdown__item">
+                    <a class="categories-dropdown__link" href="#">
+                      <img
+                        src="assets/imgs/theme/icons/icon-4.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span>Fresh Seafood</span></a
+                    >
+                  </li>
+                </ul>
+                <button class="categories-dropdown__more">
+                  <span class="categories-dropdown__more-icon"></span>
+                  <span>Show more...</span>
+                </button>
+              </div>
+
               <nav>
                 <ul class="main-nav">
                   <li class="main-nav__item main-nav__item--hot">

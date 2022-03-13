@@ -92,6 +92,11 @@ html {
   position: static !important;
 }
 
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .mt-20 {
   margin-top: 2rem;
 }
