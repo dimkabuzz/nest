@@ -29,23 +29,33 @@ const stickyNavObserver = new IntersectionObserver(stickyNav, {
 stickyNavObserver.observe(headerTop);
 
 // Show/hide categories dropdown
-const resetCategoriesDropDawn = function () {
+const hideDropDown = function (e) {
   categoriesDropdown.classList.add('hidden');
   categoriesBtn.querySelector('.fi-rs-angle-up').classList = 'fi-rs-angle-down';
   categoriesDropdownList.classList.remove('categories-dropdown__list--full');
   categoriesBtnMoreIcon.classList.remove('open');
 };
 
-categoriesBtn.addEventListener('click', function (e) {
-  e.preventDefault;
+const showDropDown = function (e) {
+  categoriesDropdown.classList.remove('hidden');
+  categoriesBtn.querySelector('.fi-rs-angle-down').classList = 'fi-rs-angle-up';
+};
 
-  if (categoriesDropdown.classList.contains('hidden')) {
-    categoriesDropdown.classList.remove('hidden');
-    categoriesBtn.querySelector('.fi-rs-angle-down').classList =
-      'fi-rs-angle-up';
-  } else {
-    resetCategoriesDropDawn();
-  }
+const switchDropDown = function (e) {
+  categoriesDropdown.classList.contains('hidden')
+    ? showDropDown(e)
+    : hideDropDown(e);
+};
+
+categoriesBtn.addEventListener('click', switchDropDown);
+
+document.body.addEventListener('click', function (e) {
+  if (
+    !categoriesDropdown.classList.contains('hidden') &&
+    e.target.offsetParent.classList.value !== 'header__wrap' &&
+    e.target.offsetParent.classList.value !== 'categories-dropdown'
+  )
+    hideDropDown();
 });
 
 // Show/hide MORE categories
@@ -136,11 +146,10 @@ const heroSlider = function () {
   });
 
   let autoSlide = setInterval(nextSlide, 3000);
-  wrap.addEventListener('mouseenter', function () {
-    clearInterval(autoSlide);
-  });
-  wrap.addEventListener('mouseleave', function () {
-    autoSlide = setInterval(nextSlide, 3000);
-  });
+  wrap.addEventListener('mouseenter', () => clearInterval(autoSlide));
+  wrap.addEventListener(
+    'mouseleave',
+    () => (autoSlide = setInterval(nextSlide, 3000))
+  );
 };
 heroSlider();
