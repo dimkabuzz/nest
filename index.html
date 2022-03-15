@@ -898,33 +898,64 @@
     <main>
       <section class="hero">
         <div class="container">
-          <div class="hero-slider">
-            <h1 class="hero-slider__heading">
-              Don’t miss amazing<br />grocery deals
-            </h1>
-            <p class="hero-slider__desc">Sign up for the daily newsletter</p>
-            <form class="subscriber" action="#">
-              <input
-                type="email"
-                class="subscriber__input"
-                placeholder="Your emaill address"
-              />
-              <button class="btn btn--subscribe" type="submit">
-                Subscribe
-              </button>
-            </form>
-            <div class="hero-slider__arrows slider__arrows">
-              <button class="slider__arrow slider__arrow--hero">
+          <div class="hero__wrap">
+            <div
+              class="hero-slide"
+              style="background-image: url('assets/imgs/slider/slider-1.png')"
+            >
+              <h1 class="hero-slide__heading">
+                Don’t miss amazing<br />grocery deals
+              </h1>
+              <p class="hero-slide__desc">Sign up for the daily newsletter</p>
+              <form class="subscriber" action="#">
+                <input
+                  type="email"
+                  class="subscriber__input"
+                  placeholder="Your emaill address"
+                />
+                <button class="btn btn--subscribe" type="submit">
+                  Subscribe
+                </button>
+              </form>
+            </div>
+
+            <div
+              class="hero-slide"
+              style="background-image: url('assets/imgs/slider/slider-2.png')"
+            >
+              <h1 class="hero-slide__heading">
+                Fresh Vegetables<br />Big discount
+              </h1>
+              <p class="hero-slide__desc">
+                Save up to 50% off on your first order
+              </p>
+              <form class="subscriber" action="#">
+                <input
+                  type="email"
+                  class="subscriber__input"
+                  placeholder="Your emaill address"
+                />
+                <button class="btn btn--subscribe" type="submit">
+                  Subscribe
+                </button>
+              </form>
+            </div>
+
+            <div class="hero-slide__arrows slider__arrows">
+              <button
+                class="slider__arrow slider__arrow--hero"
+                data-position="left"
+              >
                 <i class="fi-rs-angle-left"></i>
               </button>
-              <button class="slider__arrow slider__arrow--hero">
+              <button
+                class="slider__arrow slider__arrow--hero"
+                data-position="right"
+              >
                 <i class="fi-rs-angle-right"></i>
               </button>
             </div>
-            <div class="slider__dots">
-              <button class="slider__dot slider__dot--active"></button>
-              <button class="slider__dot"></button>
-            </div>
+            <div class="slider__dots"></div>
           </div>
         </div>
       </section>
