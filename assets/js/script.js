@@ -28,35 +28,42 @@ const stickyNavObserver = new IntersectionObserver(stickyNav, {
 
 stickyNavObserver.observe(headerTop);
 
-// Show/hide categories dropdown
-const hideDropDown = function (e) {
-  categoriesDropdown.classList.add('hidden');
-  categoriesBtn.querySelector('.fi-rs-angle-up').classList = 'fi-rs-angle-down';
-  categoriesDropdownList.classList.remove('categories-dropdown__list--full');
-  categoriesBtnMoreIcon.classList.remove('open');
-};
-
-const showDropDown = function (e) {
-  categoriesDropdown.classList.remove('hidden');
-  categoriesBtn.querySelector('.fi-rs-angle-down').classList = 'fi-rs-angle-up';
-};
-
+// Categories dropdown switcher
 const switchDropDown = function (e) {
-  categoriesDropdown.classList.contains('hidden')
-    ? showDropDown(e)
-    : hideDropDown(e);
+  // Hide categories dropdown if clicked outside
+  const hideDropDown = function (e) {
+    if (
+      !categoriesDropdown.classList.contains('hidden') &&
+      !e.target.closest('.categories-dropdown')
+    ) {
+      categoriesDropdown.classList.add('hidden');
+      categoriesBtn.querySelector('.fi-rs-angle-up').classList =
+        'fi-rs-angle-down';
+      categoriesDropdownList.classList.remove(
+        'categories-dropdown__list--full'
+      );
+      categoriesBtnMoreIcon.classList.remove('open');
+    }
+  };
+
+  // Show categories dropdown
+  const showDropDown = function () {
+    categoriesDropdown.classList.remove('hidden');
+    categoriesBtn.querySelector('.fi-rs-angle-down').classList =
+      'fi-rs-angle-up';
+  };
+
+  if (
+    categoriesDropdown.classList.contains('hidden') &&
+    e.target.closest('#categories-button')
+  ) {
+    showDropDown();
+  } else {
+    hideDropDown(e);
+  }
 };
 
-categoriesBtn.addEventListener('click', switchDropDown);
-
-document.body.addEventListener('click', function (e) {
-  if (
-    !categoriesDropdown.classList.contains('hidden') &&
-    e.target.offsetParent.classList.value !== 'header__wrap' &&
-    e.target.offsetParent.classList.value !== 'categories-dropdown'
-  )
-    hideDropDown();
-});
+window.addEventListener('click', switchDropDown);
 
 // Show/hide MORE categories
 categoriesBtnMore.addEventListener('click', function () {
