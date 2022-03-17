@@ -211,6 +211,28 @@ html {
   }
 }
 
+.animate {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.animate__fadeIn {
+  animation-name: fadeIn;
+}
+.animate__fadeInDown {
+  animation-name: fadeInDown;
+}
+.animate__fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes fadeInDown {
   0% {
     opacity: 0;
@@ -219,6 +241,16 @@ html {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0);
   }
 }
 body {
@@ -1155,7 +1187,7 @@ h6 {
   width: 100%;
   box-shadow: 0 0.8rem 2rem 0 rgba(0, 0, 0, 0.05);
   z-index: 11111;
-  animation: 700ms ease-in-out 0s normal none 1 running fadeInDown;
+  animation: 0.7s ease-in-out 0s normal none 1 running fadeInDown;
 }
 .header__nav {
   display: flex;

@@ -3,7 +3,6 @@
 const headerTop = document.querySelector('.header__top');
 const headerBottom = document.querySelector('.header__bottom');
 const categoriesBtn = document.querySelector('#categories-button');
-const categoriesBtnMore = document.querySelector('.categories-dropdown__more');
 const categoriesBtnMoreIcon = document.querySelector(
   '.categories-dropdown__more-icon'
 );
@@ -11,6 +10,16 @@ const categoriesDropdown = document.querySelector('.categories-dropdown');
 const categoriesDropdownList = document.querySelector(
   '.categories-dropdown__list'
 );
+const popularsdProductCards = document.querySelectorAll(
+  '.populars__wrap .product-card'
+);
+const dealCards = document.querySelectorAll('.deals__wrap .deal-card');
+const banners = document.querySelectorAll('.banners__wrap .banner');
+const featuresBanners = document.querySelectorAll('.banner--feature');
+const featuredCards = document.querySelectorAll('.featured__card');
+const toplistsColumns = document.querySelectorAll('.toplists__column');
+const footerColumns = document.querySelectorAll('.footer-links__column');
+const sectionHeaders = document.querySelectorAll('.section-header');
 
 // Sticky navigation
 const stickyNav = function (entries) {
@@ -30,7 +39,7 @@ stickyNavObserver.observe(headerTop);
 
 // Categories dropdown switcher
 const switchDropDown = function (e) {
-  // Hide categories dropdown if clicked outside
+  // Hide dropdown if clicked outside
   const hideDropDown = function (e) {
     if (
       !categoriesDropdown.classList.contains('hidden') &&
@@ -46,30 +55,26 @@ const switchDropDown = function (e) {
     }
   };
 
-  // Show categories dropdown
+  // Show dropdown
   const showDropDown = function () {
     categoriesDropdown.classList.remove('hidden');
     categoriesBtn.querySelector('.fi-rs-angle-down').classList =
       'fi-rs-angle-up';
   };
 
-  if (
-    categoriesDropdown.classList.contains('hidden') &&
-    e.target.closest('#categories-button')
-  ) {
-    showDropDown();
-  } else {
-    hideDropDown(e);
+  categoriesDropdown.classList.contains('hidden') &&
+  e.target.closest('#categories-button')
+    ? showDropDown()
+    : hideDropDown(e);
+
+  // Show/hide MORE categories
+  if (e.target.closest('.categories-dropdown__more')) {
+    categoriesDropdownList.classList.toggle('categories-dropdown__list--full');
+    categoriesBtnMoreIcon.classList.toggle('open');
   }
 };
 
 window.addEventListener('click', switchDropDown);
-
-// Show/hide MORE categories
-categoriesBtnMore.addEventListener('click', function () {
-  categoriesDropdownList.classList.toggle('categories-dropdown__list--full');
-  categoriesBtnMoreIcon.classList.toggle('open');
-});
 
 // Hero Slider
 const heroSlider = function () {
@@ -160,3 +165,60 @@ const heroSlider = function () {
   );
 };
 heroSlider();
+
+//Set animation class and attributes
+const setAnimation = function (
+  animateElements,
+  animationName,
+  animationDelay = false
+) {
+  animateElements.forEach((element, i) => {
+    element.classList.add('animate');
+    element.dataset.animationName = animationName;
+    if (animationDelay)
+      element.dataset.animationDelay = `${animationDelay * i}s`;
+  });
+};
+
+setAnimation(featuredCards, 'fadeInUp', 0.1);
+setAnimation(popularsdProductCards, 'fadeIn', 0.1);
+setAnimation(banners, 'fadeInUp', 0.2);
+setAnimation(sectionHeaders, 'fadeIn');
+setAnimation(dealCards, 'fadeInUp', 0.1);
+setAnimation(toplistsColumns, 'fadeInUp', 0.1);
+setAnimation(featuresBanners, 'fadeInUp', 0.1);
+setAnimation(footerColumns, 'fadeInUp', 0.1);
+
+// Reveal elements and animations
+const triggerAnimations = function () {
+  const allAnimatedElements = document.querySelectorAll('.animate');
+
+  const observerCallBack = function (entries, observer) {
+    const [entry] = entries;
+    const animatedElement = entry.target;
+
+    if (!entry.isIntersecting) return;
+
+    animatedElement.classList.remove('hidden');
+    animatedElement.classList.add(
+      `animate__${animatedElement.dataset.animationName}`
+    );
+    animatedElement.style.animationDelay =
+      animatedElement.dataset.animationDelay;
+
+    observer.unobserve(animatedElement);
+  };
+
+  allAnimatedElements.forEach(element => element.classList.add('hidden'));
+
+  allAnimatedElements.forEach(element => {
+    const elementObserver = new IntersectionObserver(observerCallBack, {
+      root: null,
+      threshol: 0.1,
+    });
+
+    elementObserver.observe(element);
+  });
+};
+
+triggerAnimations();
