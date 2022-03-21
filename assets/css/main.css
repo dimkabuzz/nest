@@ -662,6 +662,7 @@ h6 {
   background-size: cover;
 }
 .banner--bg4 {
+  max-width: 37.8rem;
   background: url("../imgs/banner/banner-4.png") no-repeat center bottom;
   background-size: cover;
 }
@@ -1785,9 +1786,9 @@ h6 {
 .featured__track {
   display: flex;
   gap: 2.4rem;
+  transition: transform 0.7s ease-out;
 }
 .featured__card {
-  flex: 1;
   text-align: center;
   min-height: 18rem;
   padding-top: 2rem;
@@ -1845,9 +1846,8 @@ h6 {
   padding: 2.5rem 0;
 }
 .bestsells__wrap {
-  display: grid;
-  grid-template-columns: minmax(min-content, 37.8rem) 1fr;
-  grid-gap: 2.4rem;
+  display: flex;
+  gap: 2.4rem;
 }
 .bestsells__list {
   position: relative;
@@ -1856,6 +1856,7 @@ h6 {
 .bestsells__track {
   display: flex;
   gap: 2.4rem;
+  transition: transform 0.7s ease-out;
 }
 .bestsells__arrows {
   margin-top: -6rem;

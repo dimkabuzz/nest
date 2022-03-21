@@ -57,10 +57,10 @@
   &__track {
     display: flex;
     gap: 2.4rem;
+    transition: transform 0.7s ease-out;
   }
 
   &__card {
-    flex: 1;
     text-align: center;
     min-height: 18rem;
     padding-top: 2rem;
@@ -128,9 +128,8 @@
   padding: 2.5rem 0;
 
   &__wrap {
-    display: grid;
-    grid-template-columns: minmax(min-content, 37.8rem) 1fr;
-    grid-gap: 2.4rem;
+    display: flex;
+    gap: 2.4rem;
   }
 
   &__list {
@@ -141,6 +140,7 @@
   &__track {
     display: flex;
     gap: 2.4rem;
+    transition: transform 0.7s ease-out;
   }
 
   &__arrows {

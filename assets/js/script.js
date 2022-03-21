@@ -16,10 +16,21 @@ const popularsdProductCards = document.querySelectorAll(
 const dealCards = document.querySelectorAll('.deals__wrap .deal-card');
 const banners = document.querySelectorAll('.banners__wrap .banner');
 const featuresBanners = document.querySelectorAll('.banner--feature');
-const featuredCards = document.querySelectorAll('.featured__card');
 const toplistsColumns = document.querySelectorAll('.toplists__column');
 const footerColumns = document.querySelectorAll('.footer-links__column');
 const sectionHeaders = document.querySelectorAll('.section-header');
+const featuredList = document.querySelector('.featured__list');
+const featuredTrack = document.querySelector('.featured__track');
+const featuredCards = document.querySelectorAll('.featured__card');
+const featuredBtns = document.querySelectorAll(
+  '.featured * .slider__arrow--tab'
+);
+const bestsellsList = document.querySelector('.bestsells__list');
+const bestsellsTrack = document.querySelector('.bestsells__track');
+const bestsellsCards = bestsellsTrack.querySelectorAll('.product-card');
+const bestsellsBtns = document.querySelectorAll(
+  '.bestsells__arrows > .slider__arrow--tab'
+);
 
 // Sticky navigation
 const stickyNav = function (entries) {
@@ -209,9 +220,9 @@ const triggerAnimations = function () {
     observer.unobserve(animatedElement);
   };
 
-  allAnimatedElements.forEach(element => element.classList.add('hidden'));
-
   allAnimatedElements.forEach(element => {
+    element.classList.add('hidden');
+
     const elementObserver = new IntersectionObserver(observerCallBack, {
       root: null,
       threshol: 0.1,
@@ -222,3 +233,75 @@ const triggerAnimations = function () {
 };
 
 triggerAnimations();
+
+// Card slider
+const cardSlider = function () {
+  const featuredCard = {
+    maxTabs: 10,
+    splitWidth: 150,
+    track: featuredTrack,
+    all: featuredCards,
+  };
+
+  const bestsellsCard = {
+    maxTabs: 4,
+    splitWidth: 250,
+    track: bestsellsTrack,
+    all: bestsellsCards,
+  };
+
+  // Responsive width for cards
+  const resizeCard = function (e, card) {
+    card.move = 0;
+    card.track.style.transform = `translateX(0px)`;
+    card.gap = parseFloat(
+      window.getComputedStyle(card.track).getPropertyValue('column-gap')
+    );
+    card.containerWidth = e[0].contentRect.width;
+    card.fitTabs = Math.round(card.containerWidth / card.splitWidth);
+    card.showTabs = card.fitTabs < card.maxTabs ? card.fitTabs : card.maxTabs;
+    card.width = Math.trunc(
+      (card.containerWidth - card.gap * (card.showTabs - 1)) / card.showTabs
+    );
+
+    card.all.forEach((cardSingle, i) => {
+      cardSingle.style.minWidth = `${card.width}px`;
+      if (i >= card.showTabs) cardSingle.classList.remove('animate');
+    });
+  };
+
+  // Move cards with one position
+  const moveCard = function (e, card) {
+    const btnPosition = e.target.closest('.slider__arrow--tab').dataset
+      .position;
+    const nextMove = Math.trunc(card.width + card.gap);
+
+    if (btnPosition === 'left' && card.move <= -nextMove) {
+      card.move += nextMove;
+      card.track.style.transform = `translateX(${card.move}px)`;
+    }
+    if (
+      btnPosition === 'right' &&
+      card.move > -(card.all.length - card.showTabs) * nextMove
+    ) {
+      card.move -= nextMove;
+      card.track.style.transform = `translateX(${card.move}px)`;
+    }
+  };
+
+  // Monitor cards containers width
+  const featuredObs = new ResizeObserver(e => resizeCard(e, featuredCard));
+  const bestsellsObs = new ResizeObserver(e => resizeCard(e, bestsellsCard));
+  featuredObs.observe(featuredList);
+  bestsellsObs.observe(bestsellsList);
+
+  // Event listeners for card sliders buttons
+  featuredBtns.forEach(btn =>
+    btn.addEventListener('click', e => moveCard(e, featuredCard))
+  );
+  bestsellsBtns.forEach(btn =>
+    btn.addEventListener('click', e => moveCard(e, bestsellsCard))
+  );
+};
+
+cardSlider();
