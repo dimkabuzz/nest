@@ -229,6 +229,12 @@ html {
   }
 }
 
+@media only screen and (max-width: 56.25em) {
+  .show-900 {
+    display: flex !important;
+  }
+}
+
 .animate {
   animation-duration: 1s;
   animation-fill-mode: both;
@@ -303,10 +309,6 @@ ol {
   list-style: none;
 }
 
-nav {
-  width: 100%;
-}
-
 strong {
   font-weight: 600;
 }
@@ -377,12 +379,18 @@ h6 {
   align-items: flex-end;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 2.5rem;
-  margin-bottom: 4.4rem;
+  gap: 2.2rem;
+  margin-bottom: 4rem;
 }
 @media only screen and (max-width: 56.25em) {
   .section-header {
     gap: 1.8rem;
+  }
+}
+@media only screen and (max-width: 31.25em) {
+  .section-header {
+    gap: 1.4rem;
+    margin-bottom: 3.2rem;
   }
 }
 .section-header__nav {
@@ -464,6 +472,12 @@ h6 {
   line-height: 2rem;
   letter-spacing: 0.5px;
   border-radius: 5rem;
+}
+@media only screen and (max-width: 31.25em) {
+  .btn--subscribe, .btn--subscribe:link, .btn--subscribe:visited {
+    height: 5.6rem;
+    padding: 0 3rem;
+  }
 }
 .btn--shop, .btn--shop:link, .btn--shop:visited {
   font-size: 1.2rem !important;
@@ -1112,6 +1126,8 @@ h6 {
 .slider__arrow--hero {
   width: 4.5rem;
   height: 4.5rem;
+}
+.slider__arrow--hero i {
   font-size: inherit;
 }
 .slider__arrow--tab {
@@ -1213,7 +1229,7 @@ h6 {
   height: 100%;
   background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
   cursor: crosshair;
-  z-index: 9999;
+  z-index: 22222;
   opacity: 0;
   visibility: hidden;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -1291,6 +1307,11 @@ h6 {
 @media only screen and (max-width: 43.75em) {
   .header__actions-wrap {
     margin: 0;
+  }
+}
+@media only screen and (max-width: 31.25em) {
+  .header__actions-wrap {
+    gap: 1.4rem;
   }
 }
 .header__bottom {
@@ -1794,7 +1815,7 @@ h6 {
 }
 
 .newsletter {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 2.5rem 0;
 }
 .newsletter__wrap {
   min-height: 23rem;
@@ -1822,7 +1843,7 @@ h6 {
 }
 
 .footer-links {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 2.5rem 0;
 }
 .footer-links__wrap {
   display: flex;
@@ -1877,7 +1898,7 @@ h6 {
 }
 
 .hero {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 2.5rem 0;
 }
 .hero__wrap {
   position: relative;
@@ -1972,7 +1993,7 @@ h6 {
 }
 
 .featured {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 0 0;
 }
 .featured__list {
   overflow: hidden;
@@ -2017,7 +2038,7 @@ h6 {
 }
 
 .banners {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 2.5rem 0;
 }
 .banners__wrap {
   display: flex;
@@ -2030,7 +2051,7 @@ h6 {
 }
 
 .populars {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 2.5rem 0;
 }
 .populars__wrap {
   display: grid;
@@ -2039,7 +2060,7 @@ h6 {
 }
 
 .bestsells {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 2.5rem 0;
 }
 .bestsells__wrap {
   display: flex;
@@ -2059,7 +2080,7 @@ h6 {
 }
 
 .deals {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 2.5rem 0;
 }
 .deals__wrap {
   display: grid;
@@ -2073,7 +2094,7 @@ h6 {
 }
 
 .toplists {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 2.5rem 0;
 }
 .toplists__wrap {
   display: grid;
@@ -2083,6 +2104,7 @@ h6 {
 @media only screen and (max-width: 31.25em) {
   .toplists__wrap {
     grid-template-columns: 1fr;
+    grid-gap: 5rem;
   }
 }
 .toplists__products {

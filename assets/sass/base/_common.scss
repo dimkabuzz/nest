@@ -200,3 +200,9 @@ html {
     display: block !important;
   }
 }
+
+.show-900 {
+  @include respond(900) {
+    display: flex !important;
+  }
+}

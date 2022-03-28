@@ -1,5 +1,5 @@
 .hero {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 2.5rem 0;
 
   &__wrap {
     position: relative;
@@ -91,7 +91,7 @@
 }
 
 .featured {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 0 0;
 
   &__list {
     overflow: hidden;
@@ -146,7 +146,7 @@
 }
 
 .banners {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 2.5rem 0;
 
   &__wrap {
     display: flex;
@@ -159,7 +159,7 @@
 }
 
 .populars {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 2.5rem 0;
 
   &__wrap {
     display: grid;
@@ -169,7 +169,7 @@
 }
 
 .bestsells {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 2.5rem 0;
 
   &__wrap {
     display: flex;
@@ -193,7 +193,7 @@
 }
 
 .deals {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 2.5rem 0;
 
   &__wrap {
     display: grid;
@@ -207,7 +207,7 @@
 }
 
 .toplists {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 2.5rem 0;
 
   &__wrap {
     display: grid;
@@ -216,6 +216,7 @@
 
     @include respond(500) {
       grid-template-columns: 1fr;
+      grid-gap: 5rem;
     }
   }
 

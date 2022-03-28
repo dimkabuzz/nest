@@ -82,6 +82,10 @@
     @include respond(700) {
       margin: 0;
     }
+
+    @include respond(500) {
+      gap: 1.4rem;
+    }
   }
 
   &__bottom {

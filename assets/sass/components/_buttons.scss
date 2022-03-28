@@ -40,6 +40,11 @@
       line-height: 2rem;
       letter-spacing: 0.5px;
       border-radius: 5rem;
+
+      @include respond(500) {
+        height: 5.6rem;
+        padding: 0 3rem;
+      }
     }
   }
 

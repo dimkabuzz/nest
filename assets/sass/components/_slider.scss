@@ -40,7 +40,10 @@
     &--hero {
       width: 4.5rem;
       height: 4.5rem;
-      font-size: inherit;
+
+      i {
+        font-size: inherit;
+      }
     }
 
     &--tab {

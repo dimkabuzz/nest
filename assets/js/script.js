@@ -62,6 +62,7 @@ stickyNavObserver.observe(header);
 
 // Categories dropdown switcher
 const switchDropDown = function (e) {
+  e.preventDefault();
   // Hide dropdown if clicked outside
   const hideDropDown = function (e) {
     if (
@@ -313,8 +314,13 @@ const cardSlider = function () {
 
   // Move cards with one position
   const moveCard = function (e, card) {
-    const btnPosition = e.target.closest('.slider__arrow--tab').dataset
-      .position;
+    console.log(e);
+    const btnPosition = e
+      ? e.target.closest('.slider__arrow--tab').dataset.position
+      : 'right';
+    console.log(btnPosition);
+    // const btnPosition = e.target.closest('.slider__arrow--tab').dataset
+    //   .position;
     const nextMove = Math.trunc(card.width + card.gap);
 
     if (btnPosition === 'left' && card.move <= -nextMove) {
@@ -327,6 +333,9 @@ const cardSlider = function () {
     ) {
       card.move -= nextMove;
       card.track.style.transform = `translateX(${card.move}px)`;
+    } else {
+      card.move = 0;
+      card.track.style.transform = `translateX(0px)`;
     }
   };
 
@@ -342,6 +351,13 @@ const cardSlider = function () {
   );
   bestsellsBtns.forEach(btn =>
     btn.addEventListener('click', e => moveCard(e, bestsellsCard))
+  );
+
+  let autoSlide = setInterval(() => moveCard(false, bestsellsCard), 3000);
+  bestsellsList.addEventListener('mouseenter', () => clearInterval(autoSlide));
+  bestsellsList.addEventListener(
+    'mouseleave',
+    () => (autoSlide = setInterval(() => moveCard(false, bestsellsCard), 3000))
   );
 };
 
