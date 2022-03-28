@@ -377,6 +377,7 @@
 .nav-tabs {
   display: flex;
   gap: 3rem;
+  overflow: hidden;
 
   &__link {
     &,

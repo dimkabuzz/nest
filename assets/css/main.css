@@ -50,7 +50,6 @@ html {
   max-width: 164rem;
   margin: 0 auto;
   padding: 0 2.4rem;
-  overflow: hidden;
 }
 
 .bg-1 {
@@ -302,6 +301,10 @@ button {
 ul,
 ol {
   list-style: none;
+}
+
+nav {
+  width: 100%;
 }
 
 strong {
@@ -1731,6 +1734,7 @@ h6 {
 .nav-tabs {
   display: flex;
   gap: 3rem;
+  overflow: hidden;
 }
 .nav-tabs__link, .nav-tabs__link:link, .nav-tabs__link:visited {
   display: inline-block;
@@ -1926,6 +1930,11 @@ h6 {
     margin-bottom: 3rem;
   }
 }
+@media only screen and (max-width: 37.5em) {
+  .hero-slide__heading {
+    font-size: 4rem;
+  }
+}
 .hero-slide__desc {
   font-size: 3rem;
   line-height: 2.6rem;
@@ -1940,6 +1949,12 @@ h6 {
   .hero-slide__desc {
     font-size: 2.4rem;
     margin-bottom: 5.2rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .hero-slide__desc {
+    font-size: 2.2rem;
+    margin-bottom: 4.4rem;
   }
 }
 .hero-slide__arrows {
