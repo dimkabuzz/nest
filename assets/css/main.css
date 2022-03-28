@@ -380,6 +380,11 @@ h6 {
   gap: 2.5rem;
   margin-bottom: 4.4rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .section-header {
+    gap: 1.8rem;
+  }
+}
 .section-header__nav {
   display: flex;
   align-items: flex-end;
@@ -1954,7 +1959,7 @@ h6 {
 @media only screen and (max-width: 37.5em) {
   .hero-slide__desc {
     font-size: 2.2rem;
-    margin-bottom: 4.4rem;
+    margin-bottom: 4.2rem;
   }
 }
 .hero-slide__arrows {
