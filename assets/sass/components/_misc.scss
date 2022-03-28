@@ -74,6 +74,11 @@
   }
 }
 
+.mobile-menu-active .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
 .overlay {
   position: fixed;
   top: 0;

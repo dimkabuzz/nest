@@ -1,7 +1,11 @@
 'use strict';
 
+const body = document.querySelector('body');
+const header = document.querySelector('.header');
 const headerTop = document.querySelector('.header__top');
 const headerBottom = document.querySelector('.header__bottom');
+const headerMobile = document.querySelector('.header-mobile');
+const headerBurgerOverlay = document.querySelector('.header__burger-overlay');
 const categoriesBtn = document.querySelector('#categories-button');
 const categoriesBtnMoreIcon = document.querySelector(
   '.categories-dropdown__more-icon'
@@ -36,9 +40,17 @@ const bestsellsBtns = document.querySelectorAll(
 const stickyNav = function (entries) {
   const [entry] = entries;
 
-  if (!entry.isIntersecting)
-    headerBottom.classList.add('header__bottom--sticky');
-  else headerBottom.classList.remove('header__bottom--sticky');
+  document
+    .querySelectorAll('.header--sticky')
+    .forEach(el => el.classList.remove('header--sticky'));
+
+  const headerStick =
+    window.getComputedStyle(headerBottom).display === 'none'
+      ? headerTop
+      : headerBottom;
+
+  if (!entry.isIntersecting) headerStick.classList.add('header--sticky');
+  else headerStick.classList.remove('header--sticky');
 };
 
 const stickyNavObserver = new IntersectionObserver(stickyNav, {
@@ -46,7 +58,7 @@ const stickyNavObserver = new IntersectionObserver(stickyNav, {
   threshold: 0,
 });
 
-stickyNavObserver.observe(headerTop);
+stickyNavObserver.observe(header);
 
 // Categories dropdown switcher
 const switchDropDown = function (e) {
@@ -85,7 +97,36 @@ const switchDropDown = function (e) {
   }
 };
 
+// Mobile menu switcher
+const switchMobileMenu = function (e) {
+  // Hide mobile menu if clicked outside
+  const hideMenu = function (e) {
+    if (
+      (!headerMobile.classList.contains('hidden') &&
+        !e.target.closest('.header-mobile')) ||
+      e.target.closest('.btn--close')
+    ) {
+      headerMobile.classList.add('hidden');
+      headerMobile.style.transform = 'translateX(-20rem)';
+      body.classList.remove('mobile-menu-active');
+    }
+  };
+
+  // Show mobile menu
+  const showMenu = function () {
+    headerMobile.classList.remove('hidden');
+    headerMobile.style.transform = 'translateX(0)';
+    body.classList.add('mobile-menu-active');
+  };
+
+  headerMobile.classList.contains('hidden') &&
+  e.target.closest('.header__burger-overlay')
+    ? showMenu()
+    : hideMenu(e);
+};
+
 window.addEventListener('click', switchDropDown);
+window.addEventListener('click', switchMobileMenu);
 
 // Hero Slider
 const heroSlider = function () {
@@ -245,7 +286,7 @@ const cardSlider = function () {
 
   const bestsellsCard = {
     maxTabs: 4,
-    splitWidth: 250,
+    splitWidth: 283,
     track: bestsellsTrack,
     all: bestsellsCards,
   };

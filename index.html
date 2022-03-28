@@ -22,12 +22,15 @@
       <div class="header__top">
         <div class="container">
           <div class="header__wrap">
+            <div class="header__burger">
+              <div class="header__burger-overlay"></div>
+            </div>
             <div class="header__logo">
               <a href="index.html">
                 <img src="assets/imgs/theme/logo.svg" alt="Logo Nest" />
               </a>
             </div>
-            <div class="header__search-wrap">
+            <div class="header__search-wrap hide-700">
               <form class="header-search" action="#">
                 <select
                   class="header-search__category-select"
@@ -56,7 +59,7 @@
               </form>
             </div>
             <div class="header__actions-wrap">
-              <div class="header-action">
+              <div class="header-action hide-800">
                 <a class="header-action__link" href="#">
                   <img
                     class="header-action__img"
@@ -146,7 +149,7 @@
                 </div>
               </div>
 
-              <div class="header-action">
+              <div class="header-action hide-700">
                 <a class="header-action__link" href="#">
                   <img
                     class="header-action__img"
@@ -195,11 +198,11 @@
           </div>
         </div>
       </div>
-      <div class="header__bottom">
+      <div class="header__bottom hide-700">
         <div class="container">
           <div class="header__wrap">
             <div class="header__nav">
-              <button class="btn" id="categories-button">
+              <button class="btn hide-800" id="categories-button">
                 <i class="fi-rs-apps"></i>
                 <span class="hide-1200">Browse</span>
                 <span>All Categories</span>
@@ -718,47 +721,12 @@
                     </ul>
                   </li>
                   <li class="main-nav__item">
-                    <a class="main-nav__link" href="#"
-                      >Pages
-                      <i class="fi-rs-angle-down"></i>
-                    </a>
-                    <ul class="sub-menu">
-                      <li class="sub-menu__item">
-                        <a class="sub-menu__link" href="#">About Us</a>
-                      </li>
-                      <li class="sub-menu__item">
-                        <a class="sub-menu__link" href="#">Contact</a>
-                      </li>
-                      <li class="sub-menu__item">
-                        <a class="sub-menu__link" href="#">My Account</a>
-                      </li>
-                      <li class="sub-menu__item">
-                        <a class="sub-menu__link" href="#">Login</a>
-                      </li>
-                      <li class="sub-menu__item">
-                        <a class="sub-menu__link" href="#">Register</a>
-                      </li>
-                      <li class="sub-menu__item">
-                        <a class="sub-menu__link" href="#">Purchase Guide</a>
-                      </li>
-                      <li class="sub-menu__item">
-                        <a class="sub-menu__link" href="#">Privacy Policy</a>
-                      </li>
-                      <li class="sub-menu__item">
-                        <a class="sub-menu__link" href="#">Terms of Service</a>
-                      </li>
-                      <li class="sub-menu__item">
-                        <a class="sub-menu__link" href="#">404 Page</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="main-nav__item">
                     <a class="main-nav__link" href="#">Contact</a>
                   </li>
                 </ul>
               </nav>
             </div>
-            <div class="hotline">
+            <div class="hotline hide-1100">
               <img
                 class="hotline__icon"
                 src="assets/imgs/theme/icons/icon-headphone.svg"
@@ -773,7 +741,7 @@
           </div>
         </div>
       </div>
-      <div class="header-mobile">
+      <div class="header-mobile hidden" style="transform: translateX(-20rem)">
         <div class="header-mobile__top">
           <a href="#">
             <img
@@ -965,7 +933,7 @@
           <div class="section-header">
             <div class="section-header__nav">
               <h3>Featured Categories</h3>
-              <nav>
+              <nav class="hide-500">
                 <ul class="nav-tabs">
                   <li>
                     <a class="nav-tabs__link" href="#">Cake & Milk</a>
@@ -1184,7 +1152,7 @@
               </div>
             </div>
 
-            <div class="banner banner--bg3">
+            <div class="banner banner--bg3 hide-800 show-500">
               <div class="banner__text">
                 <h4>
                   The best Organic<br />
@@ -1898,7 +1866,7 @@
 
           <div class="bestsells__wrap">
             <div
-              class="banner banner--bg4 ai-fs animate"
+              class="banner banner--bg4 ai-fs animate hide-1000"
               data-animation-name="fadeIn"
             >
               <div class="banner__text">
@@ -2491,7 +2459,7 @@
               </div>
             </article>
 
-            <article class="deal-card hide-700">
+            <article class="deal-card hide-800">
               <div class="product-card__img-box">
                 <a href="#">
                   <img
@@ -2551,7 +2519,7 @@
               </div>
             </article>
 
-            <article class="deal-card hide-900">
+            <article class="deal-card hide-1100">
               <div class="product-card__img-box">
                 <a href="#">
                   <img
@@ -2826,7 +2794,7 @@
               </div>
             </div>
 
-            <div class="toplists__column hide-700">
+            <div class="toplists__column hide-800">
               <div class="sidebar-header">
                 <h4>Recently added</h4>
               </div>
@@ -2931,7 +2899,7 @@
               </div>
             </div>
 
-            <div class="toplists__column hide-900">
+            <div class="toplists__column hide-1100">
               <div class="sidebar-header">
                 <h4>Top Rated</h4>
               </div>
@@ -3045,7 +3013,7 @@
         <div class="container">
           <div class="newsletter__wrap">
             <h2 class="mb-20">
-              Stay home & get your daily<br />needs from our shop
+              Stay home & get your daily needs from our shop
             </h2>
             <p class="mb-45">Start You'r Daily Shopping with Nest Mart</p>
             <form class="subscriber" action="#">
@@ -3224,7 +3192,7 @@
                 <br />All rights reserved
               </p>
             </div>
-            <div>
+            <div class="hide-800">
               <div class="hotline mr-30">
                 <img
                   class="hotline__icon hotline__icon--footer"
@@ -3250,7 +3218,7 @@
                 </div>
               </div>
             </div>
-            <div>
+            <div class="hide-500">
               <div class="social">
                 <h6>Follow Us</h6>
                 <div class="social__links">

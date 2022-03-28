@@ -4,6 +4,14 @@
   &__wrap {
     position: relative;
     height: 53.3rem;
+
+    @include respond(800) {
+      height: 47rem;
+    }
+
+    @include respond(600) {
+      height: 38rem;
+    }
   }
 }
 
@@ -19,6 +27,14 @@
   opacity: 0;
   transition: opacity 0.5s ease 0s;
 
+  @include respond(800) {
+    padding: 7.7rem;
+  }
+
+  @include respond(600) {
+    padding: 4rem;
+  }
+
   &--active {
     opacity: 1;
   }
@@ -27,12 +43,30 @@
     font-size: 7.2rem;
     line-height: 1;
     margin-bottom: 4rem;
+
+    @include respond(800) {
+      font-size: 5.8rem;
+    }
+
+    @include respond(600) {
+      font-size: 5rem;
+      margin-bottom: 3rem;
+    }
   }
 
   &__desc {
     font-size: 3rem;
     line-height: 2.6rem;
     margin-bottom: 6.5rem;
+
+    @include respond(800) {
+      font-size: 2.8rem;
+    }
+
+    @include respond(600) {
+      font-size: 2.4rem;
+      margin-bottom: 5.2rem;
+    }
   }
 
   &__arrows {
@@ -108,9 +142,10 @@
   &__wrap {
     display: flex;
     gap: 2.4rem;
-    height: 18vw;
-    min-height: 14.6rem;
-    max-height: 28rem;
+
+    @include respond(500) {
+      flex-direction: column;
+    }
   }
 }
 
@@ -155,6 +190,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     grid-gap: 2.4rem;
+
+    @include respond(500) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
@@ -165,6 +204,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
     grid-gap: 2.4rem;
+
+    @include respond(500) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__column {
@@ -186,6 +229,10 @@
     img {
       max-width: 11rem;
       border-radius: 1rem;
+
+      @include respond(500) {
+        max-width: 13rem;
+      }
     }
 
     &:hover {

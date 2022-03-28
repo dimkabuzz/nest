@@ -36,6 +36,7 @@ html {
   max-width: 164rem;
   margin: 0 auto;
   padding: 0 2.4rem;
+  overflow: hidden;
 }
 
 .bg-1 {
@@ -93,8 +94,8 @@ html {
 }
 
 .hidden {
-  opacity: 0;
-  visibility: hidden;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 .mt-20 {
@@ -153,6 +154,18 @@ html {
   }
 }
 
+.hide-1100 {
+  @include respond(1100) {
+    display: none !important;
+  }
+}
+
+.hide-1000 {
+  @include respond(1000) {
+    display: none !important;
+  }
+}
+
 .hide-900 {
   @include respond(900) {
     display: none !important;
@@ -180,5 +193,11 @@ html {
 .hide-500 {
   @include respond(500) {
     display: none !important;
+  }
+}
+
+.show-500 {
+  @include respond(500) {
+    display: block !important;
   }
 }

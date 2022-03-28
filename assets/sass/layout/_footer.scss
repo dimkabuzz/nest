@@ -5,9 +5,17 @@
     min-height: 23rem;
     padding: 8.4rem 7.8rem;
     border-radius: 2rem;
-    background: url("../imgs/banner/banner-10.png") no-repeat center,
-      url("../imgs/banner/banner-9.png") no-repeat bottom right 5.3rem;
+    background: url('../imgs/banner/banner-10.png') no-repeat center,
+      url('../imgs/banner/banner-9.png') no-repeat bottom right 5.3rem;
     background-size: cover, 40% auto;
+
+    @include respond(600) {
+      padding: 4rem;
+    }
+
+    h2 {
+      max-width: 59rem;
+    }
   }
 }
 

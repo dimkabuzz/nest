@@ -41,6 +41,18 @@ ORDER: Base + Typography > General layout + Grid > Page Layout > Components
     }
   }
 
+  @if $breakpoint == 1000 {
+    @media only screen and (max-width: 62.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == 1100 {
+    @media only screen and (max-width: 68.75em) {
+      @content;
+    }
+  }
+
   @if $breakpoint == 1200 {
     @media only screen and (max-width: 75em) {
       @content;

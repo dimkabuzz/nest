@@ -1,6 +1,13 @@
 .header {
   &__top {
+    background-color: #fff;
     padding: 3rem 0;
+
+    @include respond(700) {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid $border-color;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 7%);
+    }
   }
 
   &__wrap {
@@ -10,12 +17,56 @@
     position: relative;
   }
 
+  &__burger-overlay {
+    position: absolute;
+    top: -0.7rem;
+    width: 2.4rem;
+    height: 1.7rem;
+    cursor: pointer;
+    z-index: 1111;
+  }
+
+  &__burger {
+    display: none;
+
+    @include respond(700) {
+      display: block;
+      position: relative;
+
+      &,
+      &::before,
+      &::after {
+        width: 2.4rem;
+        height: 0.2rem;
+        background-color: #000;
+      }
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+      }
+
+      &::before {
+        top: -0.7rem;
+      }
+
+      &::after {
+        top: 0.7rem;
+      }
+    }
+  }
+
   &__logo {
     margin-right: 7rem;
 
     img {
       display: block;
       width: 18rem;
+    }
+
+    @include respond(700) {
+      margin: 0;
     }
   }
 
@@ -26,28 +77,36 @@
   &__actions-wrap {
     display: flex;
     gap: 2rem;
-    margin-left: 1rem;
+    margin-left: 8rem;
+
+    @include respond(700) {
+      margin: 0;
+    }
   }
 
   &__bottom {
     background-color: #fff;
     border-top: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
-
-    &--sticky {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      box-shadow: 0 0.8rem 2rem 0 rgb(0 0 0 / 5%);
-      z-index: 11111;
-      animation: 0.7s ease-in-out 0s normal none 1 running fadeInDown;
-    }
   }
 
   &__nav {
     display: flex;
     align-items: center;
     gap: 1.8rem;
+  }
+
+  &--sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 0.8rem 2rem 0 rgb(0 0 0 / 5%);
+    z-index: 11111;
+    animation: 0.7s ease-in-out 0s normal none 1 running fadeInDown;
+
+    @include respond(700) {
+      box-shadow: 0 2px 5px rgb(0 0 0 / 7%);
+    }
   }
 }
 
@@ -86,6 +145,10 @@
   &__label {
     display: block;
     color: $color-text;
+
+    @include respond(900) {
+      display: none !important;
+    }
   }
 
   &:hover .action-dropdown {
@@ -107,9 +170,9 @@
   overflow-y: auto;
   overflow-x: hidden;
   box-shadow: 0 0 1.5rem 0 rgb(0 0 0 / 9%);
+  opacity: 1;
+  visibility: visible;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  opacity: 0;
-  visibility: hidden;
 
   &__top {
     display: flex;

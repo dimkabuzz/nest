@@ -50,6 +50,7 @@ html {
   max-width: 164rem;
   margin: 0 auto;
   padding: 0 2.4rem;
+  overflow: hidden;
 }
 
 .bg-1 {
@@ -121,8 +122,8 @@ html {
 }
 
 .hidden {
-  opacity: 0;
-  visibility: hidden;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 .mt-20 {
@@ -181,6 +182,18 @@ html {
   }
 }
 
+@media only screen and (max-width: 68.75em) {
+  .hide-1100 {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 62.5em) {
+  .hide-1000 {
+    display: none !important;
+  }
+}
+
 @media only screen and (max-width: 56.25em) {
   .hide-900 {
     display: none !important;
@@ -208,6 +221,12 @@ html {
 @media only screen and (max-width: 31.25em) {
   .hide-500 {
     display: none !important;
+  }
+}
+
+@media only screen and (max-width: 31.25em) {
+  .show-500 {
+    display: block !important;
   }
 }
 
@@ -318,13 +337,28 @@ h1 {
 h2 {
   font-size: 4rem;
 }
+@media only screen and (max-width: 37.5em) {
+  h2 {
+    font-size: 3.6rem;
+  }
+}
 
 h3 {
   font-size: 3.2rem;
 }
+@media only screen and (max-width: 37.5em) {
+  h3 {
+    font-size: 2.8rem;
+  }
+}
 
 h4 {
   font-size: 2.4rem;
+}
+@media only screen and (max-width: 37.5em) {
+  h4 {
+    font-size: 2.2rem;
+  }
 }
 
 h5 {
@@ -346,6 +380,13 @@ h6 {
 .section-header__nav {
   display: flex;
   align-items: flex-end;
+  gap: 2.5rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .section-header__nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .section-header h3 {
   margin-right: 3rem;
@@ -353,7 +394,6 @@ h6 {
 .section-header__arrows {
   display: flex;
   gap: 1rem;
-  padding-left: 11rem;
 }
 .section-header__show-all:link, .section-header__show-all:visited {
   color: #7e7e7e;
@@ -634,16 +674,29 @@ h6 {
 
 .banner {
   display: flex;
-  flex: 1 0 auto;
+  flex: 1;
   align-items: center;
   padding: 5rem;
   border-radius: 1rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .banner {
+    padding: 4rem;
+  }
+}
+.banner__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  height: 100%;
 }
 .banner__text h2 {
   margin-bottom: 10rem;
 }
 .banner__text h4 {
-  min-height: 11.5rem;
+  min-height: 9.5rem;
   transition: all 0.3s ease;
 }
 .banner__text:hover > h4 {
@@ -662,7 +715,7 @@ h6 {
   background-size: cover;
 }
 .banner--bg4 {
-  max-width: 37.8rem;
+  min-width: 37.8rem;
   background: url("../imgs/banner/banner-4.png") no-repeat center bottom;
   background-size: cover;
 }
@@ -1139,6 +1192,11 @@ h6 {
   align-items: flex-start;
 }
 
+.mobile-menu-active .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -1154,13 +1212,53 @@ h6 {
 }
 
 .header__top {
+  background-color: #fff;
   padding: 3rem 0;
+}
+@media only screen and (max-width: 43.75em) {
+  .header__top {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #ececec;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
 }
 .header__wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
+}
+.header__burger-overlay {
+  position: absolute;
+  top: -0.7rem;
+  width: 2.4rem;
+  height: 1.7rem;
+  cursor: pointer;
+  z-index: 1111;
+}
+.header__burger {
+  display: none;
+}
+@media only screen and (max-width: 43.75em) {
+  .header__burger {
+    display: block;
+    position: relative;
+  }
+  .header__burger, .header__burger::before, .header__burger::after {
+    width: 2.4rem;
+    height: 0.2rem;
+    background-color: #000;
+  }
+  .header__burger::before, .header__burger::after {
+    position: absolute;
+    content: "";
+  }
+  .header__burger::before {
+    top: -0.7rem;
+  }
+  .header__burger::after {
+    top: 0.7rem;
+  }
 }
 .header__logo {
   margin-right: 7rem;
@@ -1169,20 +1267,35 @@ h6 {
   display: block;
   width: 18rem;
 }
+@media only screen and (max-width: 43.75em) {
+  .header__logo {
+    margin: 0;
+  }
+}
 .header__search-wrap {
   flex: 1;
 }
 .header__actions-wrap {
   display: flex;
   gap: 2rem;
-  margin-left: 1rem;
+  margin-left: 8rem;
+}
+@media only screen and (max-width: 43.75em) {
+  .header__actions-wrap {
+    margin: 0;
+  }
 }
 .header__bottom {
   background-color: #fff;
   border-top: 1px solid #ececec;
   border-bottom: 1px solid #ececec;
 }
-.header__bottom--sticky {
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+.header--sticky {
   position: fixed;
   top: 0;
   width: 100%;
@@ -1190,10 +1303,10 @@ h6 {
   z-index: 11111;
   animation: 0.7s ease-in-out 0s normal none 1 running fadeInDown;
 }
-.header__nav {
-  display: flex;
-  align-items: center;
-  gap: 1.8rem;
+@media only screen and (max-width: 43.75em) {
+  .header--sticky {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
 }
 
 .header-action {
@@ -1228,6 +1341,11 @@ h6 {
   display: block;
   color: #7e7e7e;
 }
+@media only screen and (max-width: 56.25em) {
+  .header-action__label {
+    display: none !important;
+  }
+}
 .header-action:hover .action-dropdown {
   top: calc(100% + 1rem);
   opacity: 1;
@@ -1246,9 +1364,9 @@ h6 {
   overflow-y: auto;
   overflow-x: hidden;
   box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.09);
+  opacity: 1;
+  visibility: visible;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  opacity: 0;
-  visibility: hidden;
 }
 .header-mobile__top {
   display: flex;
@@ -1472,6 +1590,11 @@ h6 {
 .main-nav__item--hot {
   margin-right: 1.5rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .main-nav__item--hot {
+    display: none !important;
+  }
+}
 .main-nav a {
   font-family: "Quicksand", sans-serif;
   font-weight: 700;
@@ -1615,9 +1738,10 @@ h6 {
   font-family: "Quicksand", sans-serif;
   font-size: inherit;
   font-weight: 600;
-  border: 0;
   color: #253d4e;
+  white-space: nowrap;
   background: none;
+  border: 0;
 }
 .nav-tabs__link:hover, .nav-tabs__link:active {
   color: #3bb77e;
@@ -1669,6 +1793,14 @@ h6 {
   border-radius: 2rem;
   background: url("../imgs/banner/banner-10.png") no-repeat center, url("../imgs/banner/banner-9.png") no-repeat bottom right 5.3rem;
   background-size: cover, 40% auto;
+}
+@media only screen and (max-width: 37.5em) {
+  .newsletter__wrap {
+    padding: 4rem;
+  }
+}
+.newsletter__wrap h2 {
+  max-width: 59rem;
 }
 
 .features {
@@ -1742,6 +1874,16 @@ h6 {
   position: relative;
   height: 53.3rem;
 }
+@media only screen and (max-width: 50em) {
+  .hero__wrap {
+    height: 47rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .hero__wrap {
+    height: 38rem;
+  }
+}
 
 .hero-slide {
   position: absolute;
@@ -1755,6 +1897,16 @@ h6 {
   opacity: 0;
   transition: opacity 0.5s ease 0s;
 }
+@media only screen and (max-width: 50em) {
+  .hero-slide {
+    padding: 7.7rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .hero-slide {
+    padding: 4rem;
+  }
+}
 .hero-slide--active {
   opacity: 1;
 }
@@ -1763,10 +1915,32 @@ h6 {
   line-height: 1;
   margin-bottom: 4rem;
 }
+@media only screen and (max-width: 50em) {
+  .hero-slide__heading {
+    font-size: 5.8rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .hero-slide__heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+  }
+}
 .hero-slide__desc {
   font-size: 3rem;
   line-height: 2.6rem;
   margin-bottom: 6.5rem;
+}
+@media only screen and (max-width: 50em) {
+  .hero-slide__desc {
+    font-size: 2.8rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .hero-slide__desc {
+    font-size: 2.4rem;
+    margin-bottom: 5.2rem;
+  }
 }
 .hero-slide__arrows {
   opacity: 0;
@@ -1828,9 +2002,11 @@ h6 {
 .banners__wrap {
   display: flex;
   gap: 2.4rem;
-  height: 18vw;
-  min-height: 14.6rem;
-  max-height: 28rem;
+}
+@media only screen and (max-width: 31.25em) {
+  .banners__wrap {
+    flex-direction: column;
+  }
 }
 
 .populars {
@@ -1870,6 +2046,11 @@ h6 {
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 2.4rem;
 }
+@media only screen and (max-width: 31.25em) {
+  .deals__wrap {
+    grid-template-columns: 1fr;
+  }
+}
 
 .toplists {
   padding: 2.5rem 0;
@@ -1878,6 +2059,11 @@ h6 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   grid-gap: 2.4rem;
+}
+@media only screen and (max-width: 31.25em) {
+  .toplists__wrap {
+    grid-template-columns: 1fr;
+  }
 }
 .toplists__products {
   display: flex;
@@ -1893,6 +2079,11 @@ h6 {
 .toplists__item img {
   max-width: 11rem;
   border-radius: 1rem;
+}
+@media only screen and (max-width: 31.25em) {
+  .toplists__item img {
+    max-width: 13rem;
+  }
 }
 .toplists__item:hover {
   transform: translateY(-0.5rem);
