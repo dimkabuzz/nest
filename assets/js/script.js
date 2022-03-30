@@ -1,5 +1,6 @@
 'use strict';
 
+const preloader = document.querySelector('.preloader');
 const body = document.querySelector('body');
 const header = document.querySelector('.header');
 const headerTop = document.querySelector('.header__top');
@@ -359,7 +360,7 @@ const cardSlider = function () {
 cardSlider();
 
 // Mobile Menu Dropdown
-
+/////////////////////////////////
 // Select all expand buttons
 const mobileExpandBtns = document.querySelectorAll('.mobile-menu__expand');
 
@@ -429,4 +430,10 @@ mobileExpandBtns.forEach(expandBtn => {
         currentParent.style.height = currentParentHeight - changeHeight + 'px';
     }
   });
+});
+
+// Preloader
+window.addEventListener('load', e => {
+  preloader.style.transition = '0.6s';
+  preloader.classList.add('hidden');
 });
