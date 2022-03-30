@@ -314,20 +314,15 @@ const cardSlider = function () {
 
   // Move cards with one position
   const moveCard = function (e, card) {
-    console.log(e);
     const btnPosition = e
       ? e.target.closest('.slider__arrow--tab').dataset.position
       : 'right';
-    console.log(btnPosition);
-    // const btnPosition = e.target.closest('.slider__arrow--tab').dataset
-    //   .position;
     const nextMove = Math.trunc(card.width + card.gap);
 
     if (btnPosition === 'left' && card.move <= -nextMove) {
       card.move += nextMove;
       card.track.style.transform = `translateX(${card.move}px)`;
-    }
-    if (
+    } else if (
       btnPosition === 'right' &&
       card.move > -(card.all.length - card.showTabs) * nextMove
     ) {
@@ -353,12 +348,72 @@ const cardSlider = function () {
     btn.addEventListener('click', e => moveCard(e, bestsellsCard))
   );
 
-  let autoSlide = setInterval(() => moveCard(false, bestsellsCard), 3000);
+  let autoSlide = setInterval(() => moveCard(null, bestsellsCard), 3000);
   bestsellsList.addEventListener('mouseenter', () => clearInterval(autoSlide));
   bestsellsList.addEventListener(
     'mouseleave',
-    () => (autoSlide = setInterval(() => moveCard(false, bestsellsCard), 3000))
+    () => (autoSlide = setInterval(() => moveCard(null, bestsellsCard), 3000))
   );
 };
 
 cardSlider();
+
+// Mobile Menu Dropdown
+
+// Select all expand buttons
+const mobileExpandBtns = document.querySelectorAll('.mobile-menu__expand');
+
+// Add event listeners for expand buttons
+mobileExpandBtns.forEach(expandBtn => {
+  expandBtn.addEventListener('click', function () {
+    const allActiveDropDown = document.querySelectorAll('.mobile-menu__active');
+    const currentDropDown = expandBtn.nextElementSibling;
+    let currentHeight = Array.prototype.reduce.call(
+      currentDropDown.childNodes,
+      function (p, c) {
+        return p + (c.offsetHeight || 0);
+      },
+      0
+    );
+    let parentDropDown = currentDropDown.closest('.mobile-menu__active');
+    let parentHeight = Number.parseFloat(parentDropDown?.style.height);
+
+    // Open dropdown menu
+    if (!currentDropDown.classList.contains('mobile-menu__active')) {
+      currentDropDown.classList.add('mobile-menu__active');
+      currentDropDown.style.height = currentHeight + 'px';
+
+      allActiveDropDown.forEach(active => {
+        if (active !== currentDropDown && active !== parentDropDown) {
+          active.classList.remove('mobile-menu__active');
+          parentDropDown = active.closest('.mobile-menu__active');
+          parentHeight = Number.parseFloat(parentDropDown?.style.height);
+          currentHeight -= Number.parseFloat(active.style.height);
+          active.style.height = '0px';
+        }
+      });
+
+      if (!isNaN(parentHeight)) {
+        parentDropDown.style.height = parentHeight + currentHeight + 'px';
+      }
+    }
+
+    // Close dropdown menu
+    else {
+      currentDropDown.classList.remove('mobile-menu__active');
+      currentDropDown.style.height = '0px';
+      parentDropDown = currentDropDown.closest('.mobile-menu__active');
+      parentHeight = Number.parseFloat(parentDropDown?.style.height);
+      currentDropDown
+        .querySelectorAll('.mobile-menu__active')
+        .forEach(active => {
+          active.classList.remove('mobile-menu__active');
+          active.style.height = '0px';
+        });
+
+      if (!isNaN(parentHeight)) {
+        parentDropDown.style.height = parentHeight - currentHeight + 'px';
+      }
+    }
+  });
+});
