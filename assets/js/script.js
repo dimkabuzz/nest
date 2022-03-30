@@ -363,57 +363,70 @@ cardSlider();
 // Select all expand buttons
 const mobileExpandBtns = document.querySelectorAll('.mobile-menu__expand');
 
-// Add event listeners for expand buttons
+// Add event listeners for each expand button
 mobileExpandBtns.forEach(expandBtn => {
   expandBtn.addEventListener('click', function () {
-    const allActiveDropDown = document.querySelectorAll('.mobile-menu__active');
-    const currentDropDown = expandBtn.nextElementSibling;
-    let currentHeight = Array.prototype.reduce.call(
-      currentDropDown.childNodes,
-      function (p, c) {
-        return p + (c.offsetHeight || 0);
-      },
-      0
-    );
-    let parentDropDown = currentDropDown.closest('.mobile-menu__active');
-    let parentHeight = Number.parseFloat(parentDropDown?.style.height);
+    // Functions
+    const getActive = el => el.querySelectorAll('.mobile-menu__active');
+    const getParent = el => el.closest('.mobile-menu__active');
+    const getHeight = el => Number.parseFloat(el?.style.height);
+
+    const collapseDropDown = function (element) {
+      element.classList.remove('mobile-menu__active');
+      element.style.height = '0px';
+    };
+
+    const calcHeight = el => {
+      return Array.prototype.reduce.call(
+        el.childNodes,
+        function (p, c) {
+          return p + (c.offsetHeight || 0);
+        },
+        0
+      );
+    };
+
+    // Select current dropdown and calc height
+    const dropDown = expandBtn.nextElementSibling;
+    const height = calcHeight(dropDown);
+    let changeHeight = height;
 
     // Open dropdown menu
-    if (!currentDropDown.classList.contains('mobile-menu__active')) {
-      currentDropDown.classList.add('mobile-menu__active');
-      currentDropDown.style.height = currentHeight + 'px';
+    if (!dropDown.classList.contains('mobile-menu__active')) {
+      const allActive = getActive(document);
+      const parentDropDown = getParent(dropDown);
+      const parentHeight = getHeight(parentDropDown);
 
-      allActiveDropDown.forEach(active => {
-        if (active !== currentDropDown && active !== parentDropDown) {
-          active.classList.remove('mobile-menu__active');
-          parentDropDown = active.closest('.mobile-menu__active');
-          parentHeight = Number.parseFloat(parentDropDown?.style.height);
-          currentHeight -= Number.parseFloat(active.style.height);
-          active.style.height = '0px';
+      // Set height for expanded dropdown
+      dropDown.classList.add('mobile-menu__active');
+      dropDown.style.height = height + 'px';
+
+      // Collapse all active dropdowns from different parent
+      allActive.forEach(active => {
+        if (active !== dropDown && active !== parentDropDown) {
+          changeHeight -= getHeight(active);
+          collapseDropDown(active);
         }
       });
 
-      if (!isNaN(parentHeight)) {
-        parentDropDown.style.height = parentHeight + currentHeight + 'px';
-      }
+      // Update the active parent height
+      if (parentDropDown)
+        parentDropDown.style.height = parentHeight + changeHeight + 'px';
     }
 
-    // Close dropdown menu
+    // Collapse dropdown menu
     else {
-      currentDropDown.classList.remove('mobile-menu__active');
-      currentDropDown.style.height = '0px';
-      parentDropDown = currentDropDown.closest('.mobile-menu__active');
-      parentHeight = Number.parseFloat(parentDropDown?.style.height);
-      currentDropDown
-        .querySelectorAll('.mobile-menu__active')
-        .forEach(active => {
-          active.classList.remove('mobile-menu__active');
-          active.style.height = '0px';
-        });
+      changeHeight = getHeight(dropDown);
+      collapseDropDown(dropDown);
+      const currentParent = getParent(dropDown);
+      const currentParentHeight = getHeight(currentParent);
 
-      if (!isNaN(parentHeight)) {
-        parentDropDown.style.height = parentHeight - currentHeight + 'px';
-      }
+      // Collapse all active child dropdowns
+      getActive(dropDown).forEach(active => collapseDropDown(active));
+
+      // Update the active parent height
+      if (currentParent)
+        currentParent.style.height = currentParentHeight - changeHeight + 'px';
     }
   });
 });
