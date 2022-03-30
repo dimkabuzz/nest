@@ -130,6 +130,26 @@ const switchMobileMenu = function (e) {
 window.addEventListener('click', switchDropDown);
 window.addEventListener('click', switchMobileMenu);
 
+// Swiper for touch events
+const swiper = function (swipeTrack, swipeElement, swipeHandle) {
+  let touchstartX = 0;
+  let touchendX = 0;
+
+  function handleGesture() {
+    if (touchendX < touchstartX) swipeHandle('right', swipeElement);
+    if (touchendX > touchstartX) swipeHandle('left', swipeElement);
+  }
+
+  swipeTrack.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX;
+  });
+
+  swipeTrack.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX;
+    handleGesture();
+  });
+};
+
 // Hero Slider
 const heroSlider = function () {
   const wrap = document.querySelector('.hero__wrap');
@@ -315,9 +335,10 @@ const cardSlider = function () {
 
   // Move cards with one position
   const moveCard = function (e, card) {
-    const btnPosition = e
-      ? e.target.closest('.slider__arrow--tab').dataset.position
-      : 'right';
+    const btnPosition =
+      e !== 'left' && e !== 'right'
+        ? e.target.closest('.slider__arrow--tab').dataset.position
+        : e;
     const nextMove = Math.trunc(card.width + card.gap);
 
     if (btnPosition === 'left' && card.move <= -nextMove) {
@@ -349,12 +370,16 @@ const cardSlider = function () {
     btn.addEventListener('click', e => moveCard(e, bestsellsCard))
   );
 
-  let autoSlide = setInterval(() => moveCard(null, bestsellsCard), 3000);
+  let autoSlide = setInterval(() => moveCard('right', bestsellsCard), 3000);
   bestsellsList.addEventListener('mouseenter', () => clearInterval(autoSlide));
   bestsellsList.addEventListener(
     'mouseleave',
     () => (autoSlide = setInterval(() => moveCard(null, bestsellsCard), 3000))
   );
+
+  // Swipe cards
+  swiper(featuredTrack, featuredCard, moveCard);
+  swiper(bestsellsTrack, bestsellsCard, moveCard);
 };
 
 cardSlider();
