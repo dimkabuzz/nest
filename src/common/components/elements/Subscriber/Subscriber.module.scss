@@ -1,0 +1,22 @@
+.subscriber {
+  display: flex;
+  max-width: 45rem;
+  background-color: #fff;
+  border-radius: 5rem;
+  overflow: hidden;
+
+  &__input {
+    width: 100%;
+    padding-left: 5.8rem;
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    background: url('../../../../../../Nest/public/imgs/theme/icons/icon-plane.png')
+      no-repeat 2.5rem center;
+    background-size: 1.6rem;
+  }
+
+  &__input:focus {
+    outline: none;
+  }
+}

@@ -1,32 +1,31 @@
 // 1. Abstracts
-@import "abstracts/variables";
-@import "abstracts/functions";
-@import "abstracts/mixins";
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
 
 // 2. Base
-@import "base/common";
-@import "base/animations";
-@import "base/typography";
+@import 'base/common';
+@import 'base/animations';
+@import 'base/typography';
 
 // 3. Components
-@import "components/buttons";
-@import "components/forms";
-@import "components/banners";
-@import "components/product";
-@import "components/product-card";
-@import "components/slider";
-@import "components/misc";
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/banners';
+@import 'components/product';
+@import 'components/product-card';
+@import 'components/misc';
 
 // 4. Layout
-@import "layout/header";
-@import "layout/navigation";
-@import "layout/footer";
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/footer';
 
 // 5. Pages
-@import "pages/home";
+@import 'pages/home';
 
 // 6. Themes
-@import "themes/default";
+@import 'themes/default';
 
 // 7. Vendors
-@import "vendors/vendors-import";
+@import 'vendors/vendors-import';

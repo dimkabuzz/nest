@@ -1,0 +1,40 @@
+@import '@/styles/abstracts/_variables.scss';
+
+.slider {
+  &__dots {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  &__dot {
+    &,
+    &:link,
+    &:visited {
+      width: 1.5rem;
+      height: 1.5rem;
+      background: none;
+      border-radius: 50%;
+      border: 1px solid $color-heading;
+      transition-timing-function: linear;
+    }
+
+    &:hover,
+    &:active {
+      background: $border-color-2;
+    }
+
+    &--active {
+      background: $color-brand;
+      border-color: $color-brand;
+
+      &:hover {
+        background: $color-brand;
+        border-color: $color-brand;
+      }
+    }
+  }
+}
